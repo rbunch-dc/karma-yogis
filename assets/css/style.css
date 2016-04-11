@@ -6,7 +6,7 @@
   padding: 0px;
 }
 
-/* line 13, ../../tools/compass/sass/style.scss */
+/* line 10, ../../tools/compass/sass/style.scss */
 .navbar.navbar-default {
   position: absolute;
   top: 0px;
@@ -15,13 +15,23 @@
   border-radius: 0 0 50px 50px;
 }
 
-/* line 21, ../../tools/compass/sass/style.scss */
+/* line 18, ../../tools/compass/sass/style.scss */
 .navbar-form input.form-control {
   width: 350px;
+  position: relative;
+  bottom: 0px;
+}
+
+/* line 24, ../../tools/compass/sass/style.scss */
+.bottom-search {
+  width: 400px;
+  position: relative;
+  bottom: 0px;
+  border-radius: 50px 50px 0 0;
 }
 
 /****** LOGIN MODAL ******/
-/* line 32, ../../tools/compass/sass/style.scss */
+/* line 35, ../../tools/compass/sass/style.scss */
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -34,14 +44,14 @@
   font-family: roboto;
 }
 
-/* line 44, ../../tools/compass/sass/style.scss */
+/* line 47, ../../tools/compass/sass/style.scss */
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
 }
 
-/* line 50, ../../tools/compass/sass/style.scss */
+/* line 53, ../../tools/compass/sass/style.scss */
 .loginmodal-container input[type=submit] {
   width: 100%;
   display: block;
@@ -49,8 +59,9 @@
   position: relative;
 }
 
-/* line 57, ../../tools/compass/sass/style.scss */
-.loginmodal-container input[type=text], input[type=password] {
+/* line 60, ../../tools/compass/sass/style.scss */
+.loginmodal-container input[type=text],
+input[type=password] {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -65,8 +76,9 @@
   -moz-box-sizing: border-box;
 }
 
-/* line 72, ../../tools/compass/sass/style.scss */
-.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+/* line 76, ../../tools/compass/sass/style.scss */
+.loginmodal-container input[type=text]:hover,
+input[type=password]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -74,7 +86,7 @@
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 80, ../../tools/compass/sass/style.scss */
+/* line 85, ../../tools/compass/sass/style.scss */
 .loginmodal {
   text-align: center;
   font-size: 14px;
@@ -84,10 +96,10 @@
   padding: 0 8px;
   /* border-radius: 3px; */
   /* -webkit-user-select: none;
-    user-select: none; */
+user-select: none; */
 }
 
-/* line 92, ../../tools/compass/sass/style.scss */
+/* line 97, ../../tools/compass/sass/style.scss */
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
@@ -100,7 +112,7 @@
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-/* line 104, ../../tools/compass/sass/style.scss */
+/* line 109, ../../tools/compass/sass/style.scss */
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
@@ -109,7 +121,7 @@
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-/* line 112, ../../tools/compass/sass/style.scss */
+/* line 117, ../../tools/compass/sass/style.scss */
 .loginmodal-container a {
   text-decoration: none;
   color: #666;
@@ -120,7 +132,7 @@
   transition: opacity ease 0.5s;
 }
 
-/* line 122, ../../tools/compass/sass/style.scss */
+/* line 127, ../../tools/compass/sass/style.scss */
 .login-help {
   font-size: 12px;
 }
