@@ -1,0 +1,25 @@
+{
+  "name": "karma-yogis",
+  "version": "1.0.0",
+  "description": "Team project",
+  "main": "server.js",
+  "dependencies": {
+    "connect": "^3.4.1",
+    "serve-static": "^1.10.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://curtjenk@github.com/rbunch-dc/karma-yogis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbunch-dc/karma-yogis/issues"
+  },
+  "homepage": "https://github.com/rbunch-dc/karma-yogis#readme"
+}
