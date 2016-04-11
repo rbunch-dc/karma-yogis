@@ -4,7 +4,11 @@
   "description": "Team project",
   "main": "server.js",
   "dependencies": {
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "bootstrap": "^3.3.6",
     "connect": "^3.4.1",
+    "jquery": "^2.2.3",
     "serve-static": "^1.10.2"
   },
   "devDependencies": {},
