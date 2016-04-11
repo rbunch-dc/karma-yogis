@@ -22,6 +22,7 @@
 }
 
 .bottom-search {
+<<<<<<< HEAD
 	width: 520px;
 	position: relative;
 	bottom: 0px;
@@ -30,6 +31,12 @@
 		background-color: transparent;
 		border: none;
 	}
+=======
+	width: 400px;
+	position: relative;
+	bottom: 0px;
+	border-radius: 50px 50px 0 0;
+>>>>>>> c2122e650b6ddcc81215c284d3ac5d79129a9631
 }
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
