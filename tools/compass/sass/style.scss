@@ -1,5 +1,6 @@
 body {
-
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .main-wrapper {
@@ -20,10 +21,11 @@ body {
 }
 
 .icon {
-    // min-width: 5%;
-    // position: relative;
-    // top: 20px;
-    // right: -900px;
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    width: 150px;
+    height: 150px;
 }
 
 .navbar.navbar-default {
@@ -67,6 +69,7 @@ body {
 	box-shadow: 0px;
 	border-top: 0px solid transparent;
 	border-bottom: 0px solid transparent;
+    z-index: 2;
 
 	.search-bar {
 		background-color: transparent;
@@ -81,6 +84,7 @@ body {
 #search-wrapper {
 	height: 20vh;
 	background-image: url("../img/headertex2.jpg");
+    position: relative;
 }
 
 .dropdown-menu {
@@ -113,13 +117,15 @@ body {
     border-radius: 2px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    font-family: roboto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .loginmodal-container h1 {
     text-align: center;
     font-size: 1.8em;
-    font-family: roboto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .loginmodal-container input[type=submit] {
@@ -157,9 +163,8 @@ input[type=password]:hover {
 .loginmodal {
     text-align: center;
     font-size: 14px;
-    font-family: 'Arial', sans-serif;
-    font-weight: 700;
-    height: 36px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;    height: 36px;
     padding: 0 8px;
     /* border-radius: 3px; */
     /* -webkit-user-select: none;
@@ -173,7 +178,8 @@ input[type=password]:hover {
     text-shadow: 0 1px rgba(0, 0, 0, 0.1);
     background-color: #8a1617;
     padding: 17px 0px;
-    font-family: roboto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     font-size: 14px;
     /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
