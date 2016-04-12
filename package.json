@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "angular": "^1.5.3",
+    "angular-local-storage": "^0.2.7",
     "angular-route": "^1.5.3",
     "bootstrap": "^3.3.6",
     "connect": "^3.4.1",
