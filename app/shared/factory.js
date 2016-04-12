@@ -35,7 +35,7 @@ recipeApp.factory('utilLocalStore', function($window, $rootScope) {
         },
         getUserFavFood: function() {
             return $window.localStorage.getItem('user-fav-food');
-        }, 
+        },
         setInventory: function(inventoryItem) {
             $window.localStorage.setItem('inventory', JSON.stringify(inventoryItem));
             return this;
@@ -122,81 +122,73 @@ var RecipeIngredient = function(data) {
 };
 var RecipeSearchResults = function(data) {
     data = data || {};
+    this.sourceDisplayName = data.sourceDisplayName;
+    this.recipeId = data.recipeId;
     this.title = data.title;
-    this.publisher = data.publisher;
-    this.imageURL = data.imageURL;
-    this.rank = data.rank;
-    this.ingredientLines = data.ingredientLines;
+    this.thumbnailImageURL = data.imageURL;
+    this.largeImageURL = data.largeImageURL;
+    this.rank = data.rank; // or Rating
+    // this.ingredientLines = data.ingredientLines;
     this.ingredients = data.ingredients;
+    this.prepTime = data.prepTime;
 
 };
+
+function secondsToMin(seconds) {
+    var minutes = Math.ceil(seconds / 60);
+    var time = '';
+    if (seconds < 60) {
+        return '';
+    }
+    if (minutes >= 60) {
+        if (minutes % 60 === 0) {
+            time = minutes / 60 + ' min';
+        } else {
+            time = Math.floor(minutes / 60) + ' hrs ' + (minutes - 60) + ' min';
+        }
+    } else {
+        time = minutes + ' min';
+
+    }
+
+    return time;
+}
+
 
 recipeApp.factory('recipesApi', function($http) {
     return {
         getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc) {
-            // https://api.edamam.com/search?q=chicken&app_id=a8a27b26&app_key=37bc8c9ac93cb65201786a6508da22ec
-            var _apiId = '&app_id' + apiId;
-            var _apiKey = '&app_key=' + apiKey;
+            //
+            //http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=
+            //   &maxResult    
+            var _apiId = '&_app_id=' + apiId;
+            var _apiKey = '&_app_key=' + apiKey;
             var _query = '&q=' + query;
-            var _URL = 'https://api.edamam.com/search?';
+            var _maxRes = '&maxResult=' + max || 10;
+            var _URL = 'http://api.yummly.com/v1/api/recipes?';
             var results = {};
-            _URL = encodeURI(_URL + _apiKey + _apiId + _query);
-            console.log("Recipes url = " + _URL);
+            _URL = encodeURI(_URL + _apiKey + _apiId + _query + _maxRes);
+            //console.log(_URL);
             $http.get(_URL).then(
                 /* success*/
                 function(response) {
-
                     RecipeArray = [];
-                    
-                    var hits = response.data.hits;
+                    var hits = response.data.matches;
                     for (var i = 0; i < hits.length && i < max; i++) {
-                        var hit = hits[i].recipe;
+                        var hit = hits[i];
                         res = new RecipeSearchResults({});
-                       // console.log(hit);
-                        res.title = hit.label;
-                        res.imageURL = hit.image;
-                        res.ingredientLines = hit.ingredientLines;
-                        res.ingredients = [];
-                        for (var x = 0; x < hit.ingredients.length; x++) {
-                            var ingredient = new RecipeIngredient();
-                            ingredient.text = hit.ingredients[x].text;
-                            ingredient.quantity = hit.ingredients[x].quantity;
-                            ingredient.food = hit.ingredients[x].food;
-                            ingredient.weight = hit.ingredients[x].weight;
-                            ingredient.measure = hit.ingredients[x].measure;
-                            res.ingredients.push(ingredient);
-                        }
+                        res.recipeId = hit.id;
+                        res.title = hit.recipeName;
+                        res.rank = hit.rating;
+                        res.sourceDisplayName = hit.sourceDisplayName;
+                        res.thumbnailImageURL = hit.smallImageUrls[0];
+                        res.largeImageURL = hit.smallImageUrls[0].replace('=s90', '=s325-c-e370');
+                        res.ingredients = hit.ingredients;
+                        res.prepTime = secondsToMin(hit.totalTimeInSeconds);
                         RecipeArray.push(res);
                     }
                     // console.log(RecipeArray);
                     successFunc(RecipeArray);
-                },
-                /* error*/
-                function(errorRes) {
-                    failFunc(errorRes);
-                });
-        }
-    };
-});
-
-recipeApp.factory('recipesApi2', function($http) {
-    return {
-        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc) {
-     //
-    //http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=
-    //       
-            var _apiId = '&_app_id' + apiId;
-            var _apiKey = '&_app_key=' + apiKey;
-            var _query = '&q=' + query;
-            var _URL = 'http://api.yummly.com/v1/api/recipes?';
-            var results = {};
-            _URL = encodeURI(_URL + _apiKey + _apiId + _query);
-         
-            $http.get(_URL).then(
-                /* success*/
-                function(response) {
-                    console.log(response.data);
-                    successFunc(response.data);
                 },
                 /* error*/
                 function(errorRes) {

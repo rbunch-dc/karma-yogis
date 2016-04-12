@@ -1,4 +1,16 @@
 <div class="container">
-    <div class="card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
+    <div class="ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
+        <div class="row">
+            <div class="col-md-12"  style="border: 1px solid red;">
+                <div class="col-md-6">
+                    <img ng-src="{{recipe.largeImageURL}}">
+                </div>
+                <div col="col-md-6">
+                    <div ng-repeat="ingredient in recipe.ingredients">
+                        {{ingredient}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
