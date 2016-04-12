@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 /* line 5, ../../tools/compass/sass/style.scss */
 .main-wrapper {
-  background-image: url("../headertex2.jpg");
+  background-image: url("../img/headertex2.jpg");
   height: 25vh;
   padding: 0px;
   position: absolute;
@@ -70,7 +70,7 @@
 /* line 74, ../../tools/compass/sass/style.scss */
 #search-wrapper {
   height: 20vh;
-  background-image: url("headertex2.jpg");
+  background-image: url("../img/headertex2.jpg");
 }
 
 /* line 79, ../../tools/compass/sass/style.scss */
