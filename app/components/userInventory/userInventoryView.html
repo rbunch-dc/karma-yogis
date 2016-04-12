@@ -1,0 +1,42 @@
+<div class="container">
+
+	<div id="user-profile">
+		<div class="row">
+
+			<div class="col-sm-9">
+				<div id="user-pic" class="col-sm-9">
+					<img src="http://placehold.it/150x150">
+					<p>User Name</p>
+				</div>
+			</div>
+				
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+	<div id="inventory-container">
+
+		<div class="row">
+			<div id="add-inventory" class="col-sm -9">
+				<form id="addInventory">
+					<input type="text" name="item" placeholder="item">
+					<input type="number" name="qty" placeholder="quantity">
+					<input type="text" name="uom" placeholder="unit of measure">
+					<input type="submit">
+				</form>
+			</div>
+
+			<div id="show-inventory" class="col-sm-3" ng-repeat="item in inventory"></div>
+
+		</div>
+	</div>
+
+</div>

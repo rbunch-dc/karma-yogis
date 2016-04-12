@@ -37,11 +37,11 @@ recipeApp.factory('utilLocalStore', function($window, $rootScope) {
             return $window.localStorage.getItem('user-fav-food');
         }, 
         setInventory: function(inventoryItem) {
-            $window.localStorage.setItem('inventory');
+            $window.localStorage.setItem('inventory', JSON.stringify(inventoryItem));
             return this;
         },
         getInventory: function() {
-            return $window.localStorage.getItem('inventory');
+            return JSON.parse($window.localStorage.getItem('inventory'));
         }
     };
 
