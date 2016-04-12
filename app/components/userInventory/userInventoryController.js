@@ -1,4 +1,4 @@
-recipeApp.controller('homeController', function($scope, utilLocalStore, weatherApi, recipesApi) {
+recipeApp.controller('userInventoryController', function($scope, utilLocalStore, weatherApi, recipesApi) {
 
 var inventory = [];
 function inventoryItem(item, qty, uom){
