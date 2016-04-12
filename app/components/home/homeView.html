@@ -1,1 +1,22 @@
-<div>{{homeMessage}}</div>
+
+
+
+<div class="container" ng-controller="homeController" ng-init="search(' ')">
+
+
+    <div class="card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
+        <a href="{{ createRecipeUrl(recipe.id) }}">
+            <img ng-src="{{ recipe.smallImageUrls[0].replace('=s90', '=s325-c-e370') }}">
+        </a>
+
+        <h3><a href="{{ createRecipeUrl(recipe.id) }}" >{{ recipe.recipeName }}</a></h3>
+        <div> Ready In: {{secondsToMin(recipe.totalTimeInSeconds) }}</div>
+        <div class="{{ recipe.rating }}">{{recipe.rating}}</div>
+        <p>{{ recipe.ingredients.join(", ") }}
+            <br>
+            <a href="">{{ recipe.sourceDisplayName }}</a>
+            </span>
+        </p>
+    </div>
+
+</div>
