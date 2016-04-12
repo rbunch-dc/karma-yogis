@@ -1,13 +1,13 @@
-var homeController = function($scope, $http, $log) {
+var homeController = function($scope, $http) {
 
     var onSearchComplete = function(response) {
-        $log.info($scope.loadingClass);
+        //$log.info($scope.loadingClass);
         $scope.recipes = response.data.matches;
         $scope.numMatches = response.data.totalMatchCount;
     };
 
     var onError = function(response) {
-        $scope.error = 'Whoops!, something went wrong.'
+        $scope.error = 'Whoops!, something went wrong.';
     };
 
     $scope.search = function(term) {
@@ -53,8 +53,8 @@ var homeController = function($scope, $http, $log) {
         }
 
         return time;
-    }
-}
+    };
+};
     // var apiKey = '7496eb8b9ef9616cf145982ce0a992fe';
 
     // var city = 'Atlanta';

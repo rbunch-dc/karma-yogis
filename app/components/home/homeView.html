@@ -1,22 +1,37 @@
 
 
 
-<div class="container" ng-controller="homeController" ng-init="search(' ')">
+<div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
+    <div class="row">
 
+        <div  class="col-md-9">
+            <div class="main-trending col-md-5 food-content text-center panel panel-default card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
+                <a href="{{ createRecipeUrl(recipe.id) }}">
+                    <img ng-src="{{ recipe.smallImageUrls[0].replace('=s90', '=s325-c-e370') }}">
+                </a>
 
-    <div class="card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
-        <a href="{{ createRecipeUrl(recipe.id) }}">
-            <img ng-src="{{ recipe.smallImageUrls[0].replace('=s90', '=s325-c-e370') }}">
-        </a>
+                <h3><a href="{{ createRecipeUrl(recipe.id) }}" >{{ recipe.recipeName }}</a></h3>
+                <div> Ready In: {{secondsToMin(recipe.totalTimeInSeconds) }}</div>
+                <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
+                <a href="">{{ recipe.sourceDisplayName }}</a>
+            </div>
+        </div>
 
-        <h3><a href="{{ createRecipeUrl(recipe.id) }}" >{{ recipe.recipeName }}</a></h3>
-        <div> Ready In: {{secondsToMin(recipe.totalTimeInSeconds) }}</div>
-        <div class="{{ recipe.rating }}">{{recipe.rating}}</div>
-        <p>{{ recipe.ingredients.join(", ") }}
-            <br>
-            <a href="">{{ recipe.sourceDisplayName }}</a>
-            </span>
-        </p>
+        <div class="col-md-3">
+            <div class="col-md-12 text-center panel panel-default trending" ng-repeat="recipe in recipes">
+               <a href="{{ createRecipeUrl(recipe.id) }}">
+                    <img ng-src="{{ recipe.smallImageUrls[0].replace('=s90', '=s325-c-e370') }}">
+                </a>
+
+                <h3><a href="{{ createRecipeUrl(recipe.id) }}" >{{ recipe.recipeName }}</a></h3>
+                <div> Ready In: {{secondsToMin(recipe.totalTimeInSeconds) }}</div>
+                <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
+                <a href="">{{ recipe.sourceDisplayName }}</a>
+            </div>
+        </div>
+
     </div>
-
 </div>
+
+
+
