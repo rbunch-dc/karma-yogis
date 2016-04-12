@@ -171,3 +171,30 @@ recipeApp.factory('recipesApi', function($http) {
         }
     };
 });
+
+recipeApp.factory('recipesApi2', function($http) {
+    return {
+        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc) {
+     //
+    //http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=
+    //       
+            var _apiId = '&_app_id' + apiId;
+            var _apiKey = '&_app_key=' + apiKey;
+            var _query = '&q=' + query;
+            var _URL = 'http://api.yummly.com/v1/api/recipes?';
+            var results = {};
+            _URL = encodeURI(_URL + _apiKey + _apiId + _query);
+         
+            $http.get(_URL).then(
+                /* success*/
+                function(response) {
+                    console.log(response.data);
+                    successFunc(response.data);
+                },
+                /* error*/
+                function(errorRes) {
+                    failFunc(errorRes);
+                });
+        }
+    };
+});
