@@ -35,6 +35,13 @@ recipeApp.factory('utilLocalStore', function($window, $rootScope) {
         },
         getUserFavFood: function() {
             return $window.localStorage.getItem('user-fav-food');
+        }, 
+        setInventory: function(inventoryItem) {
+            $window.localStorage.setItem('inventory');
+            return this;
+        },
+        getInventory: function() {
+            return $window.localStorage.getItem('inventory');
         }
     };
 
