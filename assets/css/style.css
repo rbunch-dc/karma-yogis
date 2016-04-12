@@ -1,51 +1,199 @@
-/*
-Error: Invalid CSS after "	width: 520px": expected "{", was ";"
-        on line 58 of /Users/Ciaralli/Desktop/DigitalCrafts/2-16 immersive/Unit 2/karma-yogis/tools/compass/sass/style.scss
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+/* line 5, ../../tools/compass/sass/style.scss */
+.main-wrapper {
+  background-image: url("../headertex2.jpg");
+  height: 25vh;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
 
-53: 
-54: }
-55: 
-56: .bottom-search {
-57: <<<<<<< HEAD
-58: 	width: 520px;
-59: 	position: relative;
-60: 	top: 90px;
-61: 	box-shadow: 0px;
-62: 	border-top: 0px solid transparent;
-63: 	border-bottom: 0px solid transparent;
+/* line 15, ../../tools/compass/sass/style.scss */
+.logo {
+  width: 30%;
+  position: relative;
+  top: 20px;
+  left: 0px;
+}
 
-Backtrace:
-/Users/Ciaralli/Desktop/DigitalCrafts/2-16 immersive/Unit 2/karma-yogis/tools/compass/sass/style.scss:58
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1110:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:654:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:663:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:647:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:673:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:123:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:39:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:278:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:471:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"	width: 520px\": expected \"{\", was \";\"\A         on line 58 of /Users/Ciaralli/Desktop/DigitalCrafts/2-16 immersive/Unit 2/karma-yogis/tools/compass/sass/style.scss\A \A 53: \A 54: }\A 55: \A 56: .bottom-search {\A 57: <<<<<<< HEAD\A 58: 	width: 520px;\A 59: 	position: relative;\A 60: 	top: 90px;\A 61: 	box-shadow: 0px;\A 62: 	border-top: 0px solid transparent;\A 63: 	border-bottom: 0px solid transparent;"; }
+/* line 22, ../../tools/compass/sass/style.scss */
+.navbar.navbar-default {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+/* line 29, ../../tools/compass/sass/style.scss */
+.navbar-form input.form-control {
+  width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 35, ../../tools/compass/sass/style.scss */
+  .logo {
+    width: 40%;
+  }
+
+  /* line 43, ../../tools/compass/sass/style.scss */
+  .navbar-form input.form-control {
+    width: 280px;
+  }
+
+  /* line 47, ../../tools/compass/sass/style.scss */
+  .btn-default {
+    float: right;
+    position: absolute;
+    top: 18px;
+    left: 290px;
+  }
+}
+/* line 56, ../../tools/compass/sass/style.scss */
+.bottom-search {
+  width: 520px;
+  position: relative;
+  top: 90px;
+  box-shadow: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+/* line 64, ../../tools/compass/sass/style.scss */
+.bottom-search .search-bar {
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+  box-shadow: 0px;
+  border-top: 0px;
+}
+
+/* line 74, ../../tools/compass/sass/style.scss */
+#search-wrapper {
+  height: 20vh;
+  background-image: url("headertex2.jpg");
+}
+
+/* line 79, ../../tools/compass/sass/style.scss */
+.dropdown-menu {
+  min-width: 156px;
+}
+
+/* line 83, ../../tools/compass/sass/style.scss */
+.navbar-default .navbar-form {
+  border-color: transparent;
+}
+
+/* line 87, ../../tools/compass/sass/style.scss */
+.navbar-form, .search-wrapper {
+  border-top: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+  -webkit-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.1);
+}
+
+/****** LOGIN MODAL ******/
+/* line 100, ../../tools/compass/sass/style.scss */
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+/* line 112, ../../tools/compass/sass/style.scss */
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+/* line 118, ../../tools/compass/sass/style.scss */
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* line 125, ../../tools/compass/sass/style.scss */
+.loginmodal-container input[type=text],
+input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 141, ../../tools/compass/sass/style.scss */
+.loginmodal-container input[type=text]:hover,
+input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* line 150, ../../tools/compass/sass/style.scss */
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+  /* border-radius: 3px; */
+  /* -webkit-user-select: none;
+user-select: none; */
+}
+
+/* line 162, ../../tools/compass/sass/style.scss */
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  background-color: #8a1617;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+/* line 174, ../../tools/compass/sass/style.scss */
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #db2427;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+/* line 182, ../../tools/compass/sass/style.scss */
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+/* line 192, ../../tools/compass/sass/style.scss */
+.login-help {
+  font-size: 12px;
+}
