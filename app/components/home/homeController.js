@@ -1,9 +1,14 @@
-var homeController = function($scope, $http) {
+var homeController = function($scope, $http, recipesApi) {
 
+
+    var _apiId = 'e0a0ad85';
+    var _apiKey = '30d09c4f5cd26c2e94067912d367b9c6';
+    var _max = 50;
+   
     var onSearchComplete = function(response) {
         //$log.info($scope.loadingClass);
-        $scope.recipes = response.data.matches;
-        $scope.numMatches = response.data.totalMatchCount;
+        $scope.recipes = response;
+        $scope.numMatches = response.totalMatchCount;
     };
 
     var onError = function(response) {
@@ -11,8 +16,9 @@ var homeController = function($scope, $http) {
     };
 
     $scope.search = function(term) {
-        $http.get('http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=' + term)
-            .then(onSearchComplete, onError);
+        // $http.get('http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=' + term)
+        //     .then(onSearchComplete, onError);
+         recipesApi.getRecipes(_max, term, _apiKey, _apiId, onSearchComplete, onError);
 
     };
 
@@ -32,28 +38,27 @@ var homeController = function($scope, $http) {
     };
 
 
-
     $scope.sgSortOrder = '-rating';
 
-    $scope.secondsToMin = function(seconds) {
-        var minutes = Math.ceil(seconds / 60);
-        var time;
-        if (seconds < 60) {
-            return '';
-        }
-        if (minutes >= 60) {
-            if (minutes % 60 === 0) {
-                time = minutes / 60 + ' min';
-            } else {
-                time = Math.floor(minutes / 60) + ' hrs ' + (minutes - 60) + ' min';
-            }
-        } else {
-            time = minutes + ' min';
+    // $scope.secondsToMin = function(seconds) {
+    //     var minutes = Math.ceil(seconds / 60);
+    //     var time;
+    //     if (seconds < 60) {
+    //         return '';
+    //     }
+    //     if (minutes >= 60) {
+    //         if (minutes % 60 === 0) {
+    //             time = minutes / 60 + ' min';
+    //         } else {
+    //             time = Math.floor(minutes / 60) + ' hrs ' + (minutes - 60) + ' min';
+    //         }
+    //     } else {
+    //         time = minutes + ' min';
 
-        }
+    //     }
 
-        return time;
-    };
+    //     return time;
+    // };
 };
     // var apiKey = '7496eb8b9ef9616cf145982ce0a992fe';
 

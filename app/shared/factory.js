@@ -124,10 +124,10 @@ var RecipeSearchResults = function(data) {
     data = data || {};
     this.sourceDisplayName = data.sourceDisplayName;
     this.recipeId = data.recipeId;
-    this.title = data.title;
+    this.recipeName = data.recipeName;
     this.thumbnailImageURL = data.imageURL;
     this.largeImageURL = data.largeImageURL;
-    this.rank = data.rank; // or Rating
+    this.rating = data.rating; // or Rating
     // this.ingredientLines = data.ingredientLines;
     this.ingredients = data.ingredients;
     this.prepTime = data.prepTime;
@@ -178,8 +178,8 @@ recipeApp.factory('recipesApi', function($http) {
                         var hit = hits[i];
                         res = new RecipeSearchResults({});
                         res.recipeId = hit.id;
-                        res.title = hit.recipeName;
-                        res.rank = hit.rating;
+                        res.recipeName = hit.recipeName;
+                        res.rating = hit.rating;
                         res.sourceDisplayName = hit.sourceDisplayName;
                         res.thumbnailImageURL = hit.smallImageUrls[0];
                         res.largeImageURL = hit.smallImageUrls[0].replace('=s90', '=s325-c-e370');
