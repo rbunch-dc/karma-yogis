@@ -3,9 +3,39 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
+  background-color: gray;
 }
 
-/* line 6, ../../tools/compass/sass/style.scss */
+/* line 8, ../../tools/compass/sass/style.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #8a1617;
+}
+
+/* line 16, ../../tools/compass/sass/style.scss */
+.food-content, .trending {
+  height: auto;
+}
+
+/* line 21, ../../tools/compass/sass/style.scss */
+.main-trending img {
+  width: 80%;
+}
+
+/* line 28, ../../tools/compass/sass/style.scss */
+.trending img {
+  width: 100%;
+}
+
+/* line 33, ../../tools/compass/sass/style.scss */
+.panel {
+  margin-bottom: 10px;
+  position: relative;
+  top: 250px;
+  padding: 10px 0;
+  margin-left: 40px;
+}
+
+/* line 41, ../../tools/compass/sass/style.scss */
 .main-wrapper {
   background-image: url("../img/headertex2.jpg");
   height: 25vh;
@@ -15,48 +45,51 @@ body {
   width: 100%;
 }
 
-/* line 16, ../../tools/compass/sass/style.scss */
+/* line 51, ../../tools/compass/sass/style.scss */
 .logo {
   width: 30%;
   position: relative;
   top: 20px;
   left: 0px;
+  z-index: 1;
 }
 
-/* line 23, ../../tools/compass/sass/style.scss */
+/* line 59, ../../tools/compass/sass/style.scss */
 .icon {
   position: absolute;
-  top: -3px;
+  top: 29px;
   right: 0px;
   width: 150px;
   height: 150px;
+  z-index: 1;
 }
 
-/* line 31, ../../tools/compass/sass/style.scss */
+/* line 68, ../../tools/compass/sass/style.scss */
 .navbar.navbar-default {
   position: absolute;
   top: 0px;
   width: 100%;
   margin-bottom: 0px;
+  z-index: 1;
 }
 
-/* line 38, ../../tools/compass/sass/style.scss */
+/* line 76, ../../tools/compass/sass/style.scss */
 .navbar-form input.form-control {
   width: 350px;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 44, ../../tools/compass/sass/style.scss */
+  /* line 82, ../../tools/compass/sass/style.scss */
   .logo {
     width: 40%;
   }
 
-  /* line 52, ../../tools/compass/sass/style.scss */
+  /* line 90, ../../tools/compass/sass/style.scss */
   .navbar-form input.form-control {
     width: 280px;
   }
 
-  /* line 56, ../../tools/compass/sass/style.scss */
+  /* line 94, ../../tools/compass/sass/style.scss */
   .btn-default {
     float: right;
     position: absolute;
@@ -64,7 +97,7 @@ body {
     left: 290px;
   }
 }
-/* line 65, ../../tools/compass/sass/style.scss */
+/* line 104, ../../tools/compass/sass/style.scss */
 .bottom-search {
   width: 520px;
   position: relative;
@@ -74,7 +107,7 @@ body {
   border-bottom: 0px solid transparent;
   z-index: 2;
 }
-/* line 74, ../../tools/compass/sass/style.scss */
+/* line 113, ../../tools/compass/sass/style.scss */
 .bottom-search .search-bar {
   background-color: transparent;
   border: none;
@@ -83,24 +116,25 @@ body {
   border-top: 0px;
 }
 
-/* line 84, ../../tools/compass/sass/style.scss */
+/* line 123, ../../tools/compass/sass/style.scss */
 #search-wrapper {
   height: 20vh;
   background-image: url("../img/headertex2.jpg");
   position: relative;
+  z-index: 1;
 }
 
-/* line 90, ../../tools/compass/sass/style.scss */
+/* line 130, ../../tools/compass/sass/style.scss */
 .dropdown-menu {
-  min-width: 156px;
+  min-width: 167px;
 }
 
-/* line 94, ../../tools/compass/sass/style.scss */
+/* line 134, ../../tools/compass/sass/style.scss */
 .navbar-default .navbar-form {
   border-color: transparent;
 }
 
-/* line 98, ../../tools/compass/sass/style.scss */
+/* line 138, ../../tools/compass/sass/style.scss */
 .navbar-form, .search-wrapper {
   border-top: 0px solid transparent;
   border-bottom: 0px solid transparent;
@@ -109,7 +143,7 @@ body {
 }
 
 /****** LOGIN MODAL ******/
-/* line 111, ../../tools/compass/sass/style.scss */
+/* line 151, ../../tools/compass/sass/style.scss */
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -123,7 +157,7 @@ body {
   font-weight: 700;
 }
 
-/* line 124, ../../tools/compass/sass/style.scss */
+/* line 164, ../../tools/compass/sass/style.scss */
 .loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
@@ -131,7 +165,7 @@ body {
   font-weight: 700;
 }
 
-/* line 131, ../../tools/compass/sass/style.scss */
+/* line 171, ../../tools/compass/sass/style.scss */
 .loginmodal-container input[type=submit] {
   width: 100%;
   display: block;
@@ -139,7 +173,7 @@ body {
   position: relative;
 }
 
-/* line 138, ../../tools/compass/sass/style.scss */
+/* line 178, ../../tools/compass/sass/style.scss */
 .loginmodal-container input[type=text],
 input[type=password] {
   height: 44px;
@@ -156,7 +190,7 @@ input[type=password] {
   -moz-box-sizing: border-box;
 }
 
-/* line 154, ../../tools/compass/sass/style.scss */
+/* line 194, ../../tools/compass/sass/style.scss */
 .loginmodal-container input[type=text]:hover,
 input[type=password]:hover {
   border: 1px solid #b9b9b9;
@@ -166,7 +200,7 @@ input[type=password]:hover {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 163, ../../tools/compass/sass/style.scss */
+/* line 203, ../../tools/compass/sass/style.scss */
 .loginmodal {
   text-align: center;
   font-size: 14px;
@@ -179,7 +213,7 @@ input[type=password]:hover {
 user-select: none; */
 }
 
-/* line 174, ../../tools/compass/sass/style.scss */
+/* line 214, ../../tools/compass/sass/style.scss */
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
@@ -193,7 +227,7 @@ user-select: none; */
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-/* line 187, ../../tools/compass/sass/style.scss */
+/* line 227, ../../tools/compass/sass/style.scss */
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
@@ -202,7 +236,7 @@ user-select: none; */
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-/* line 195, ../../tools/compass/sass/style.scss */
+/* line 235, ../../tools/compass/sass/style.scss */
 .loginmodal-container a {
   text-decoration: none;
   color: #666;
@@ -213,7 +247,7 @@ user-select: none; */
   transition: opacity ease 0.5s;
 }
 
-/* line 205, ../../tools/compass/sass/style.scss */
+/* line 245, ../../tools/compass/sass/style.scss */
 .login-help {
   font-size: 12px;
 }
