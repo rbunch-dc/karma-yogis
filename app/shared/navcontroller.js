@@ -63,6 +63,7 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         // console.log(bad);
         if ( isNullOrEmpty(userProfile.email) ) {
             alert('not logged in');
+            return;
         }
         console.log($location.path());
         //check if current path is the "next" path.  If so, just reload the page.
