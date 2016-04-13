@@ -58,7 +58,10 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         var next = '/' + nextPage;
         //now check if user is logged in
         var userProfile = sharedData.userProfile;
-        if ( isNullOrEmpty(userProfile) ) {
+        // var bad = isNullOrEmpty(userProfile.email);
+        // console.log(userProfile);
+        // console.log(bad);
+        if ( isNullOrEmpty(userProfile.email) ) {
             alert('not logged in');
         }
         console.log($location.path());
