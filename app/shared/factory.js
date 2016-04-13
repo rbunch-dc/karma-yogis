@@ -181,8 +181,13 @@ recipeApp.factory('recipesApi', function($http) {
                         res.recipeName = hit.recipeName;
                         res.rating = hit.rating;
                         res.sourceDisplayName = hit.sourceDisplayName;
-                        res.thumbnailImageURL = hit.smallImageUrls[0];
-                        res.largeImageURL = hit.smallImageUrls[0].replace('=s90', '=s325-c-e370');
+                        if (hit.smallImageUrls && hit.smallImageUrls.length > 0) {
+                            res.thumbnailImageURL = hit.smallImageUrls[0];
+                            res.largeImageURL = hit.smallImageUrls[0].replace('=s90', '=s325-c-e370');
+                        } else {
+                            res.thumbnailImageURL = '';
+                            res.largeImageURL = '';
+                        }
                         res.ingredients = hit.ingredients;
                         res.prepTime = secondsToMin(hit.totalTimeInSeconds);
                         RecipeArray.push(res);
