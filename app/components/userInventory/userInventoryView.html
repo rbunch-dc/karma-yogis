@@ -8,7 +8,27 @@
 					<img src="http://placehold.it/150x150">
 					<p>User Name</p>
 				</div>
+				<div class="col-sm-9">Favorites</div>
+				<div class="col-sm-9">Recipes to try</div>
+				<div class="col-sm-9">Favorites</div>
+				<div class="col-sm-9">Favorites</div>
+
 			</div>
+			<div id="groups" class="col-sm-3">
+				<div id="mom">Mom
+					<p>favorites</p>
+					<p>recipes to try</p>
+				</div>
+				<div id="siblings">Siblings
+					<p>favorites</p>
+					<p>recipes to try</p>
+				</div>
+				<div id="friends">Friends
+					<p>favorites</p>
+					<p>recipes to try</p>
+				</div>
+			</div>
+
 				
 
 		</div>
@@ -26,15 +46,28 @@
 
 		<div class="row">
 			<div id="add-inventory" class="col-sm -9">
-				<form id="addInventory">
-					<input type="text" name="item" placeholder="item">
-					<input type="number" name="qty" placeholder="quantity">
-					<input type="text" name="uom" placeholder="unit of measure">
+				<form id="addInventory" ng-submit="addInventoryItem()">Inventory <br />
+					<input type="text" name="item" placeholder="item" ng-model="item">
+					<input type="number" name="qty" placeholder="quantity" ng-model="qty">
+					<input type="text" name="uom" placeholder="unit of measure" ng-model="uom">
 					<input type="submit">
 				</form>
 			</div>
 
 			<div id="show-inventory" class="col-sm-3" ng-repeat="item in inventory"></div>
+				<table border=1>Inventory Items
+					<thead>
+						<th><a href="" ng-click="sortField='name'; reverse= !reverse">Items</a></th>
+						<th>Quantity</th>
+						<th>Unit of Measure</th>
+					</thead>
+
+					<tr ng-repeat="inventoryItem in inventory">
+						<td><a href="" ng-click="">{{inventoryItem.item}}</a></td>
+						<td>{{inventoryItem.qty}}</td>
+						<td>{{inventoryItem.uom}}</td>
+					</tr>
+				</table>
 
 		</div>
 	</div>

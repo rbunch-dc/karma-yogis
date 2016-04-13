@@ -1,28 +1,65 @@
-recipeApp.controller('navController', function($scope, $location, sharedData, utilLocalStore) {
+recipeApp.controller('navController', function($scope, $location, sharedData, utilLocalStore, userStore) {
 
-    $scope.message ="Login to Your My Grub Account";
+    $scope.message = "Login to Your My Grub Account";
     $scope.user = "";
     $scope.pass = "";
+    $scope.sharedData = sharedData;
 
     utilLocalStore.setUserName('curtis');
     utilLocalStore.setUserPswd('123');
 
 
-    $scope.loginSubmit = function(){
-        
-    // $scope.user.utilLocalStore.getUserName('');
-    
-    // $scope.pass.utilLocalStore.getUserPswd('');   
+    $scope.loginSubmit = function() {
 
-        console.log($scope.user + $scope.pass);
+        var userData = userStore.getUser($scope.userEmail);
+        if (userData === undefined || userData === null) {
+            $scope.message = "Account not found";
+            return;
+        }
+        if ($scope.userPass === userData.password) {
+            sharedData.userProfile = userData;
+            console.log('successful login');
+            $('#login-modal').modal('hide');
+        } else {
+            $scope.message = "Invalid Info";
+        }
+       
     };
 
-    $scope.routeToRecipeView = function(){
-        console.log($scope.searchTerm);
+    $scope.signUp = function() {
+        if (isNullOrEmpty($scope.youremail) || isNullOrEmpty($scope.reenteremail) || isNullOrEmpty($scope.password))  {
+            alert('missing required fields');
+            return;
+        }
+         var userData = userStore.getUser($scope.youremail);
+        if (userData !== undefined && userData !== null) {
+            alert('already exists');
+            return;
+        }
+
+        var newUser = new userProfilePrefs();
+        newUser.email = $scope.youremail;
+        newUser.nameFirst = $scope.firstname;
+        newUser.nameLast = $scope.lastname;
+        newUser.password = $scope.password;
+        newUser.favFood = [];
+        newUser.inventory = [];
+        userStore.setUser(newUser);
+        $scope.sharedData.userProfile = newUser;
+        console.log($scope.sharedData);
+
+        $('#sign-up-modal').modal('hide');
+
+    };
+    $scope.routeToRecipeView = function() {
+        // console.log($scope.searchTerm);
         //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
         sharedData.searchTerm = $scope.searchTerm;
         //now route to the recipe controller & view
         $location.path('/recipe');
     };
 
+    function isNullOrEmpty (value) {
+        return !value;
+    }
 });
