@@ -31,19 +31,19 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm reg-up">
                             <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text"> Sign up!</span></legend>
-                            <form action="#" method="post" class="form" role="form">
+                            <form action="#" method="" class="form" role="form">
                                 <div class="row">
                                     <div class="col-xs-6 col-md-6">
-                                        <input class="form-control reg-control" name="firstname" placeholder="First Name" type="text" required autofocus />
+                                        <input class="form-control reg-control" name="firstname" ng-model="firstname" placeholder="First Name" type="text" required autofocus />
                                     </div>
                                     <div class="col-xs-6 col-md-6">
-                                        <input class="form-control reg-control" name="lastname" placeholder="Last Name" type="text" required />
+                                        <input class="form-control reg-control" name="lastname" ng-model="lastname" placeholder="Last Name" type="text" required />
                                     </div>
                                 </div>
-                                <input class="form-control reg-control" name="youremail" placeholder="Your Email" type="email" />
-                                <input class="form-control reg-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
-                                <input class="form-control reg-control" name="password" placeholder="New Password" type="password" />
-                                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                                <input class="form-control reg-control" name="youremail" ng-model="youremail" placeholder="Your Email" type="email" required />
+                                <input class="form-control reg-control" name="reenteremail" ng-model="reenteremail" placeholder="Re-enter Email" type="email" required />
+                                <input class="form-control reg-control" name="password" ng-model="password" placeholder="New Password" type="password" required />
+                                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit" ng-click="signUp()" >
                                     Sign up</button>
                             </form>
                         </div>
@@ -58,12 +58,12 @@
                         <h1>{{message}}</h1>
                         <br>
                         <form>
-                            <input ng-model="user" type="text" name="user" placeholder="Username">
-                            <input ng-model="pass" type="password" name="pass" placeholder="Password">
+                            <input ng-model="userEmail" type="text" name="email" placeholder="Email">
+                            <input ng-model="userPass" type="password" name="pass" placeholder="Password">
                             <input ng-click="loginSubmit()" type="submit" name="login" class="login loginmodal-submit" value="Login">
                         </form>
                         <div class="login-help">
-                            <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                            <a href="javascript(void);">Register</a> - <a href="javascript(void);">Forgot Password</a>
                         </div>
                     </div>
                 </div>
@@ -90,15 +90,15 @@
                         <li><a href="#">Inventory</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Help</a></li>
+                        <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal">Help</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login In | Sign Up <span class="caret"></span></a>
+                            <a href="javascript(void);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login In | Sign Up <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal">Login</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</a></li>
+                                <li><a href="javascript(void);" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</a></li>
                             </ul>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="javascript(void);">About Us</a></li>
                         </li>
                     </ul>
                 </div>

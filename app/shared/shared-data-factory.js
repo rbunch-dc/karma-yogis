@@ -7,3 +7,9 @@ recipeApp.factory('sharedData', function() {
 
     return sharedData;
 });
+
+function inventoryItem(item, qty, uom){
+  this.item = item;
+  this.qty = qty;
+  this.uom = uom;
+}
