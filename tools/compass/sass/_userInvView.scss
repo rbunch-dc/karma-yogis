@@ -1,3 +1,44 @@
 body {
   
 }
+
+#user-profile{
+	margin-top: 250px;
+}
+
+#user-pic{
+	margin-top: 10px;
+}
+
+#profile{
+	border: 2px solid black;
+	background-color: white;
+}
+
+#favorites, #recipes-try, #follow, #share{
+	background-color: black;
+    color: white;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+#groups{
+	border: 2px solid black;
+	margin-left: 10px;
+	background-color: white;
+	text-align: center;
+}
+
+#inventory-container{
+	margin-top: 20px;
+	text-align: center;
+}
+
+#inventory-container input{
+	float: left;
+	clear: left;
+	margin-bottom: 10px;
+	width: 300px;
+}

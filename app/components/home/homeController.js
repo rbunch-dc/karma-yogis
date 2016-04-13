@@ -1,7 +1,7 @@
 
 var homeController = function($scope, $http, recipesApi, sharedData) {
     $scope.sharedData = sharedData;
-    console.log($scope.sharedData);
+    //console.log($scope.sharedData);
 
     var _apiId = 'e0a0ad85';
     var _apiKey = '30d09c4f5cd26c2e94067912d367b9c6';

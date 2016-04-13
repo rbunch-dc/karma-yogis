@@ -19,6 +19,7 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
         if ($scope.userPass === userData.password) {
             sharedData.userProfile = userData;
             console.log('successful login');
+            console.log(sharedData);
             $('#login-modal').modal('hide');
         } else {
             $scope.message = "Invalid Info";

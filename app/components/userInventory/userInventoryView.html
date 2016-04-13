@@ -3,15 +3,15 @@
 	<div id="user-profile">
 		<div class="row">
 
-			<div class="col-sm-9">
-				<div id="user-pic" class="col-sm-9">
+			<div id="profile" class="col-sm-8">
+				<div id="user-pic" class="col-sm-8">
 					<img src="http://placehold.it/150x150">
 					<p>User Name</p>
 				</div>
-				<div class="col-sm-9">Favorites</div>
-				<div class="col-sm-9">Recipes to try</div>
-				<div class="col-sm-9">Favorites</div>
-				<div class="col-sm-9">Favorites</div>
+				<div id="favorites" class="col-sm-9">Favorites</div>
+				<div id="recipes-try" class="col-sm-8">Recipes to try</div>
+				<div id="follow" class="col-sm-8">Follow</div>
+				<div id="share" class="col-sm-8">Share</div>
 
 			</div>
 			<div id="groups" class="col-sm-3">
@@ -54,15 +54,15 @@
 				</form>
 			</div>
 
-			<div id="show-inventory" class="col-sm-3" ng-repeat="item in inventory"></div>
-				<table border=1>Inventory Items
+			<div id="show-inventory" class="col-sm-3" ng-repeat="inventoryItem in inventory track by $index"></div>
+				<table border="1">
 					<thead>
 						<th><a href="" ng-click="sortField='name'; reverse= !reverse">Items</a></th>
 						<th>Quantity</th>
 						<th>Unit of Measure</th>
 					</thead>
 
-					<tr ng-repeat="inventoryItem in inventory">
+					<tr ng-repeat="inventoryItem in inventory track by $index">
 						<td><a href="" ng-click="">{{inventoryItem.item}}</a></td>
 						<td>{{inventoryItem.qty}}</td>
 						<td>{{inventoryItem.uom}}</td>
