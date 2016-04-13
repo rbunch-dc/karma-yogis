@@ -1,4 +1,4 @@
-recipeApp.controller('userInventoryController', function($scope, utilLocalStore, userStore, sharedData) {
+recipeApp.controller('userInventoryController', function($scope, userStore, sharedData) {
 
 var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard14@gmail.com");
 
