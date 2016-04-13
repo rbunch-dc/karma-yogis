@@ -6,14 +6,38 @@ body {
     // color: #8a1617;
 }
 
+.close {
+    position: relative;
+    top: -10px;
+    right: -5px;
+}
+
+.search-bar {
+    max-width: 470px;
+    position: fixed;
+    top: 150px;
+}
+.close.login-close {
+    position: relative;
+    top: -20px;
+    right: -15px;
+}
+
+
 .navbar-default .navbar-nav > li > a {
     color: #8a1617;
 }
 
-#content-wrapper {}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: -1px;
+}
+
+.container-fluid {
+    padding: 0px;
+}
 
 .food-content, .trending {
-    height: 520px;
+    min-height: 520px;
 }
 
 .food-content {
@@ -44,8 +68,9 @@ body {
 
 .main-wrapper {
     // background-color: #8a1617;
-    background-image: url("../img/headertex2.jpg");
-    height: 25vh;
+    // background-image: url("../img/headertex2.jpg");
+    // background: no-repeat;
+    // min-height: 150px;
     padding: 0px;
     position: absolute;
     top: 0px;
@@ -62,7 +87,7 @@ body {
 
 .icon {
     position: absolute;
-    top: -3px;
+    top: 0px;
     right: 0px;
     width: 150px;
     height: 150px;
@@ -70,7 +95,7 @@ body {
 }
 
 .navbar.navbar-default {
-    position: absolute;
+    position: fixed;
     top: 0px;
     width: 100%;
     margin-bottom: 0px;
@@ -83,9 +108,9 @@ body {
 }
 
 .reg-up {
-    position: relative;
-    left: 390px;
-    top: 30px;
+    // position: static;
+    // left: 390px;
+    // top: 30px;
 }
 
 .sign-up-text {
@@ -133,6 +158,15 @@ legend {
         top: 18px;
         left: 290px;
     }
+
+    .panel {
+    margin-bottom: 5px;
+    margin-left: 0px;
+    top: 210px;
+    }
+    .search-bar {
+        top: 140px;
+    }
 }
 
 .bottom-search {
@@ -154,9 +188,10 @@ legend {
 }
 
 #search-wrapper {
-    height: 20vh;
+    min-height: 150px;
     background-image: url("../img/headertex2.jpg");
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 1;
 }
 
