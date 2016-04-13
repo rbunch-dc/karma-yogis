@@ -24,15 +24,15 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         } else {
             $scope.message = "Invalid Info";
         }
-       
+
     };
 
     $scope.signUp = function() {
-        if (isNullOrEmpty($scope.youremail) || isNullOrEmpty($scope.reenteremail) || isNullOrEmpty($scope.password))  {
+        if (isNullOrEmpty($scope.youremail) || isNullOrEmpty($scope.reenteremail) || isNullOrEmpty($scope.password)) {
             alert('missing required fields');
             return;
         }
-         var userData = userStore.getUser($scope.youremail);
+        var userData = userStore.getUser($scope.youremail);
         if (userData !== undefined && userData !== null) {
             alert('already exists');
             return;
@@ -52,20 +52,37 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         $('#sign-up-modal').modal('hide');
 
     };
-    $scope.routeToRecipeView = function() {
-        // console.log($scope.searchTerm);
+    $scope.routeToNextPage = function(nextPage) {
         //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
         sharedData.searchTerm = $scope.searchTerm;
-        //now route to the recipe controller & view
+        var next = '/' + nextPage;
+        //now check if user is logged in
+        var userProfile = sharedData.userProfile;
+        if ( isNullOrEmpty(userProfile) ) {
+            alert('not logged in');
+        }
         console.log($location.path());
-        if ($location.path() == '/recipe') {
+        //check if current path is the "next" path.  If so, just reload the page.
+        if ($location.path() == next) {
             $route.reload();
         }
-        $location.path('/recipe');
+        $location.path(next);
 
     };
+    // $scope.routeToRecipeView = function() {
+    //     // console.log($scope.searchTerm);
+    //     //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
+    //     sharedData.searchTerm = $scope.searchTerm;
+    //     //now route to the recipe controller & view
+    //     console.log($location.path());
+    //     if ($location.path() == '/recipe') {
+    //         $route.reload();
+    //     }
+    //     $location.path('/recipe');
 
-    function isNullOrEmpty (value) {
+    // };
+
+    function isNullOrEmpty(value) {
         return !value;
     }
 });
