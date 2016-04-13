@@ -42,6 +42,9 @@ recipeApp.factory('utilLocalStore', function($window, $rootScope) {
         },
         getInventory: function() {
             return JSON.parse($window.localStorage.getItem('inventory'));
+        },
+        getInventoryObj: function() {
+            return $window.localStorage.getItem('inventory');
         }
     };
 
