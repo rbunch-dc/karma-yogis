@@ -1,16 +1,30 @@
-recipeApp.controller('userInventoryController', function($scope, utilLocalStore, userStore) {
+recipeApp.controller('userInventoryController', function($scope, utilLocalStore, userStore, sharedData) {
 
+var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard14@gmail.com");
 
-	$scope.inventory = utilLocalStore.getInventory() || [];
-	//console.log($scope.inventory);
+	// $scope.inventory = sharedData.userProfile.inventory;
+	$scope.inventory = userProfile.inventory;
+
+	//utilLocalStore.getInventory() || [];
+	console.log(sharedData.userProfile);
 
 	$scope.addInventoryItem = function() {
-	    $scope.inventory.push(new inventoryItem($scope.item, $scope.qty, $scope.uom));
+		var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom);
+	    $scope.inventory.push(invItem);
 	 	$scope.newInventoryItem = '';
-	 	utilLocalStore.setInventory($scope.inventory);
-	 	console.log($scope.inventory);
-	};
 
+	 	if (!sharedData.userProfile.inventory ) {
+	 		sharedData.userProfile.inventory = [];
+	 	}
+	 	userProfile.inventory.push(invItem);
+
+	    sharedData.userProfile = userProfile;
+	    userStore.setUser(userProfile);
+	 	
+	 	console.log(sharedData);
+	 	console.log(sharedData.userProfile);
+	};
+	
 	//utilLocalStore.setInventory($scope.inventory);
 
 	//console.log(inventory);
