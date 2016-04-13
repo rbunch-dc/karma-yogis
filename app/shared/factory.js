@@ -51,6 +51,30 @@ recipeApp.factory('utilLocalStore', function($window, $rootScope) {
 });
 
 
+var userProfilePrefs = function(data) {
+    data = data || {};
+    this.email = data.email;
+    this.nameFirst = data.nameFirst;
+    this.nameLast = data.nameLast;
+    this.password = data.password;
+  
+    this.favFood = data.favFood;  //array of strings ['s1', 's2']
+    this.inventory = data.inventory; //array of objects [type inventoryItem]
+};
+
+recipeApp.factory('userStore', function($window) {
+    return {
+        setUser: function(userProfilePrefs) {
+            //use the email address as key
+            $window.localStorage.setItem(userProfilePrefs.email, JSON.stringify(userProfilePrefs));
+            return this;
+        },
+        getUser: function(emailKey) {
+            return JSON.parse($window.localStorage.getItem(emailKey));
+        },
+    };
+});
+
 var WeatherSearchResults = function(data) {
     data = data || {};
     this.currTemp = data.currTemp;
