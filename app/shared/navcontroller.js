@@ -1,4 +1,4 @@
-recipeApp.controller('navController', function($scope, $location, sharedData, utilLocalStore, userStore) {
+recipeApp.controller('navController', function($scope, $location, $route, sharedData, utilLocalStore, userStore) {
 
     $scope.message = "Login to Your My Grub Account";
     $scope.user = "";
@@ -19,6 +19,7 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
         if ($scope.userPass === userData.password) {
             sharedData.userProfile = userData;
             console.log('successful login');
+            console.log(sharedData.userProfile);
             $('#login-modal').modal('hide');
         } else {
             $scope.message = "Invalid Info";
@@ -56,7 +57,12 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
         //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
         sharedData.searchTerm = $scope.searchTerm;
         //now route to the recipe controller & view
+        console.log($location.path());
+        if ($location.path() == '/recipe') {
+            $route.reload();
+        }
         $location.path('/recipe');
+
     };
 
     function isNullOrEmpty (value) {
