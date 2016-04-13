@@ -73,6 +73,43 @@ body {
     z-index: 1;
 }
 
+.logo-banner {
+    float: left;
+    width: 35%;
+}
+
+.reg-up {
+    position: relative;
+    left: 390px;
+    top: 30px;
+}
+
+.sign-up-text {
+    margin-left: 70px;
+}
+
+legend {
+    padding: 6px;
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.reg-control {
+    margin-bottom: 10px;
+}
+
+.signup-btn {
+    background-color: #8a1617;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border: 0px;
+}
+.signup-btn:hover {   
+    
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    background-color: #db2427;
+}
+
 .navbar-form input.form-control {
     width: 350px;
 }

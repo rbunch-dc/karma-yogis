@@ -24,11 +24,33 @@
 </head>
 
 <body>
-    
-    
-
     <div ng-controller="navController" class="container-fluid main-wrapper">
-
+        <div class="register">
+            <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm reg-up">
+                            <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text"> Sign up!</span></legend>
+                            <form action="#" method="post" class="form" role="form">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6">
+                                        <input class="form-control reg-control" name="firstname" placeholder="First Name" type="text" required autofocus />
+                                    </div>
+                                    <div class="col-xs-6 col-md-6">
+                                        <input class="form-control reg-control" name="lastname" placeholder="Last Name" type="text" required />
+                                    </div>
+                                </div>
+                                <input class="form-control reg-control" name="youremail" placeholder="Your Email" type="email" />
+                                <input class="form-control reg-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
+                                <input class="form-control reg-control" name="password" placeholder="New Password" type="password" />
+                                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                                    Sign up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="login">
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
@@ -74,7 +96,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Sign Up!</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</a></li>
                             </ul>
                             <li><a href="#">About Us</a></li>
                         </li>
@@ -83,7 +105,6 @@
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
-            
             <div class="bottom-search container text-center">
                 <div class="navbar navbar-default search-bar">
                     <form class="navbar-form navbar-left" role="search">
@@ -95,23 +116,13 @@
                 </div>
             </div>
             <div id="search-wrapper">
-                     <!--    Place holder for moving div! Using this div to have a background color follow the search bar from the toggle collapse. -->
-                 <div class="container"><img class="logo" src="assets/img/logo.png" alt=""></div>
-                 <img class="icon" src="assets/img/icon.png" alt="">
+                <!--    Place holder for moving div! Using this div to have a background color follow the search bar from the toggle collapse. -->
+                <div class="container"><img class="logo" src="assets/img/logo.png" alt=""></div>
+                <img class="icon" src="assets/img/icon.png" alt="">
             </div>
-
         </nav>
-   
-    <div ng-view></div>
-
-
+        <div ng-view></div>
     </div>
-    
-        
-
-        
-
-
 </body>
 
 </html>
