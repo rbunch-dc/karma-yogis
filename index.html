@@ -30,7 +30,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm reg-up">
-                            <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text"> Sign up!</span></legend>
+                            <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text"> Sign up!</span>
+                                <a class="close" data-dismiss="modal">&times;</a>
+                                    <!-- Can use × if you are using html5 with utf8 charset -->
+                                <!-- <a class="close">×</a> -->
+                            </legend>
+                                
                             <!-- <form action="#" method="" class="form" role="form"> -->
                                 <div class="row">
                                     <div class="col-xs-6 col-md-6">
@@ -55,6 +60,7 @@
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
                     <div class="loginmodal-container">
+                        <a class="close login-close" data-dismiss="modal">&times;</a>
                         <h1>{{message}}</h1>
                         <br>
                         <form>
@@ -84,13 +90,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Recipes</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Inventory</a></li>
+                    <li class="active"><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="#/recipe"><span class="glyphicon glyphicon-cutlery"></span> Recipes</a></li>
+                        <!-- <li><a href="#"><span class="   glyphicon glyphicon-list-alt"></span> Profile</a></li>   -->        
+                        <li><a href="#/inventory"><span class="glyphicon glyphicon-list-alt"></span> User Profile</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal">Help</a></li>
+                      <!--   <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Help</a></li> -->
                         <li class="dropdown">
                             <a href="javascript(void);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login In | Sign Up <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -98,7 +104,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="javascript(void);" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</a></li>
                             </ul>
-                            <li><a href="javascript(void);">About Us</a></li>
+                           <!--  <li><a href="javascript(void);">About Us</a></li> -->
                         </li>
                     </ul>
                 </div>
@@ -106,7 +112,7 @@
             </div>
             <!-- /.container-fluid -->
             <div class="bottom-search container text-center">
-                <div class="navbar navbar-default search-bar">
+                <div class="search-bar">
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <input type="text" ng-model="searchTerm" class="form-control" placeholder="Search">
