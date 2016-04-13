@@ -3,6 +3,7 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
     $scope.message = "Login to Your My Grub Account";
     $scope.user = "";
     $scope.pass = "";
+    $scope.sharedData = sharedData;
 
     utilLocalStore.setUserName('curtis');
     utilLocalStore.setUserPswd('123');
@@ -44,14 +45,14 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
         newUser.favFood = [];
         newUser.inventory = [];
         userStore.setUser(newUser);
+        $scope.sharedData.userProfile = newUser;
+        console.log($scope.sharedData);
 
-        sharedData.userProfile = newUser;
         $('#sign-up-modal').modal('hide');
-        
-        console.log(newUser);
+
     };
     $scope.routeToRecipeView = function() {
-        console.log($scope.searchTerm);
+        // console.log($scope.searchTerm);
         //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
         sharedData.searchTerm = $scope.searchTerm;
         //now route to the recipe controller & view
@@ -61,29 +62,4 @@ recipeApp.controller('navController', function($scope, $location, sharedData, ut
     function isNullOrEmpty (value) {
         return !value;
     }
-    // for testing only
-    // var newUser = new userProfilePrefs();
-    // newUser.email = 'curtjenk@comcast.net';
-    // newUser.nameFirst = "curtis";
-    // newUser.nameLast = "jenkins";
-    // newUser.password = "Test123";
-    // newUser.favFood = ['pizza', 'tacos', 'cake'];
-    // newUser.inventory = [new inventoryItem('milk', 1, 'gallon'), new inventoryItem('cheese', 1, 'lb')];
-    // userStore.setUser(newUser);
-
-    /*
-var userProfilePrefs = function(data) {
-    data = data || {};
-    this.email = data.email;
-    this.nameFirst = data.nameFirst;
-    this.nameLast = data.nameLast;
-    this.password = data.password;
-  
-    this.favFood = data.favFood;  //array of strings ['s1', 's2']
-    this.inventory = data.inventory; //array of objects [type inventoryItem]
-};
-
-
-
-  */
 });

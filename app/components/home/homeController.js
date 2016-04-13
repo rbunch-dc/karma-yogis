@@ -1,5 +1,7 @@
-var homeController = function($scope, $http, recipesApi) {
 
+var homeController = function($scope, $http, recipesApi, sharedData) {
+    $scope.sharedData = sharedData;
+    console.log($scope.sharedData);
 
     var _apiId = 'e0a0ad85';
     var _apiKey = '30d09c4f5cd26c2e94067912d367b9c6';
@@ -86,6 +88,5 @@ var homeController = function($scope, $http, recipesApi) {
     //var recipeApiKey = '37bc8c9ac93cb65201786a6508da22ec';
     //var recipeAppId = 'a8a27b26';
     //recipesApi.getRecipes(10, 'chicken salad', recipeApiKey, recipeAppId, recipeApiSuccess, recipeApiFail);
-
 
 recipeApp.controller("homeController", homeController);
