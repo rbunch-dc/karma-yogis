@@ -71,7 +71,7 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 		this.include = include;
 	}
 
-	function foodItem(cuisine){
+	function foodItem(cuisine, include){
 		this.cuisine = cuisine;
 		this.include = include;
 	}
@@ -85,9 +85,13 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	}
 
 	$scope.removeItem = function(index){
-		alert("Do you want to remove this item?");
-		
-		sharedData.userProfile.inventory.splice(index,1);
+		var result = confirm("Do you want to remove this item?");
+		if( result === true){
+			sharedData.userProfile.inventory.splice(index,1);
+
+		}else if (result === false){
+			return;
+		}
 	}
 
 	$scope.includeCuisine = function(include, index) {

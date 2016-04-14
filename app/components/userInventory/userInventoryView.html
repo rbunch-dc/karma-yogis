@@ -37,7 +37,7 @@
 							<input type="text" class="form-control" ng-model="item" placeholder="Item">
 							<input type="text" class="form-control" ng-model="qty" placeholder="Quantity">
 							<input type="text" class="form-control" ng-model="uom" placeholder="Unit of Measure">
-							<input class="btn btn-default" type="button" value="Add Inventory Item">
+							<input class="btn btn-default" type="submit" value="Add Inventory Item">
 						</form>
 					</div>
 
@@ -64,7 +64,7 @@
 				<div id="favorites" class="col-sm-5 panel panel-default">
 					<div id="add-fav" class="col-sm-6">
 						<form ng-submit="addFavorite()" name="fav-form">
-							<select class="form-control" ng-model="include" ng-value="">
+							<select class="form-control" ng-model="selectCuisine" ng-value="">
   								<option>American</option>
   								<option>Italian</option>
   								<option>Asian</option>
@@ -91,7 +91,7 @@
   								<option>Hungarian</option>
   								<option>Portugese</option>
   							</select>
-  							<input class="btn btn-default" type="button" value="Add Favorite">
+  							<input class="btn btn-default" type="submit" value="Add Favorite">
 						</form> 
 					</div>
 					<div id="fav-items" class="col-sm-6">
