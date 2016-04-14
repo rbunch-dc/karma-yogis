@@ -1,7 +1,7 @@
 
 	<div id="container">
 		<div class="row header">
-			<div id="profile" class="col-lg-11 panel panel-default">
+ panel-bg			<div id="profile" class="col-lg-11 panel panel-default panel-bg">
 				<div class="col-lg-3 text-center" id="user-profile">
 					<img id="user" src="../../assets/img/placeholderprofileimage.png">
 					<p ng-model="userProfile">{{email}}</p>
@@ -31,7 +31,7 @@
 		</div>
 		<div id="tables" class="row">
 			<div id="inv-favs" class="col-sm-12">
-				<div id="inventory" class="col-sm-6 panel panel-default">
+				<div id="inventory" class="col-sm-6 panel panel-default panel-bg">
 					<div id="add-inv" class="col-sm-6">
 						<form ng-submit="addInventoryItem()" name="form">
 							<input type="text" class="form-control" ng-model="item" placeholder="Item">
@@ -61,7 +61,7 @@
 					    </table>
 					</div>
 				</div>
-				<div id="favorites" class="col-sm-5 panel panel-default">
+				<div id="favorites" class="col-sm-5 panel panel-default panel-bg">
 					<div id="add-fav" class="col-sm-6">
 						<form ng-submit="addFavorite()" name="fav-form">
 							<select class="form-control" ng-model="selectCuisine" ng-value="">

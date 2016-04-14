@@ -1,8 +1,8 @@
 <div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
     <div class="row">
         <div class="col-md-12">
-            <div class="food-content col-md-8" ng-repeat="recipe in recipes">
-                <div class="col-md-5 col-md-offset-1 food-content text-left panel panel-default card ng-cloak">
+            <div class="food-content col-md-8">
+                <div ng-repeat="recipe in recipes" class="col-md-5 col-md-offset-1 food-content text-left panel panel-default card ng-cloak">
                     <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
                     <div class="food-image text-center">
                         <a href="{{ createRecipeUrl(recipe.recipeId) }}">
@@ -38,3 +38,19 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    
+    var currHeight = 0;
+    var tallestHeight = 0;
+
+    $('.food-content').each(function() {
+        currHeight = $(this).height();
+        if (currHeight > tallestHeight) {
+            tallestHeight = currHeight;
+        }
+    });
+    $('.food-content').height(tallestHeight);
+    
+</script>

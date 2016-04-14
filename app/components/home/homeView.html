@@ -30,7 +30,20 @@
     </div>
 </div>      
 
+<script type="text/javascript">
+    
+    var currHeight = 0;
+    var tallestHeight = 0;
 
+    $('.food-content').each(function() {
+        currHeight = $(this).height();
+        if (currHeight > tallestHeight) {
+            tallestHeight = currHeight;
+        }
+    });
+    $('.food-content').height(tallestHeight);
+    
+</script>
 
 
 
