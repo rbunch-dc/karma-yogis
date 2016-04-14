@@ -12,7 +12,7 @@ recipeApp.controller('recipeController', function($scope, $location, sharedData,
     var _apiId = 'e0a0ad85';
     var _apiKey = '30d09c4f5cd26c2e94067912d367b9c6';
     var _query = sharedData.searchTerm || 'chicken soup';
-    var _max = 80;
+    var _max = 150;
     $scope.searchRecipes = function() {
         recipesApi.getRecipes(_max, _query, _apiKey, _apiId, successFunc, failFunc);
     };
@@ -56,7 +56,11 @@ recipeApp.controller('recipeController', function($scope, $location, sharedData,
                 }
             });
         }
-        recipesApi.getRecipes(10, _queryInvItemsIncl, _apiKey, _apiId, successFuncInv, failFuncInv, favCuisines);
+        if (favCuisines.length ===0 && _queryInvItemsIncl.length ===0 ) {
+            console.log("Can't make recommendations. Need at least 1 Inventory item or Favorite Cuisine");
+            return;
+        }
+        recipesApi.getRecipes(75, _queryInvItemsIncl, _apiKey, _apiId, successFuncInv, failFuncInv, favCuisines);
     };
 
     $scope.getRecommendedRecipes();
