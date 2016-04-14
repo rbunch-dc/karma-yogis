@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="col-md-8 col-md-offset-2" ng-repeat="recipe in recommendations">
+                <div class="col-md-8 col-md-offset-2 text-left panel panel-default card ng-cloak" ng-repeat="recipe in recommendations">
                     <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
                     <div class="food-image text-center">
                         <a href="{{ createRecipeUrl(recipe.recipeId) }}">
