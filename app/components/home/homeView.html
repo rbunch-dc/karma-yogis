@@ -7,7 +7,7 @@
         <div  class="col-md-12">
             <div class="food-content col-md-4" ng-repeat="recipe in recipes">
                 <div class="col-md-10 col-md-offset-2 food-content text-left panel panel-default card ng-cloak">
-                <h4 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h4>
+                <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
                 <div class="food-image text-center">
                     <a href="{{ createRecipeUrl(recipe.recipeId) }}">
                         <img ng-src="{{ recipe.largeImageURL }}">
