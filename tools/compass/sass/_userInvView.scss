@@ -1,3 +1,45 @@
-body {
-	
+.container{
+	position: relative;
+}
+
+#profile{
+	position: relative;
+	border: 2px solid black;
+	// margin-top: 250px;
+}
+
+#user-profile{
+	position: absolute;
+	top: 250px;
+	margin-top: 15px;
+	text-align: center;
+}
+#favs{
+	margin-top: 15px;
+}
+
+#favs p{
+	background-color: gainsboro;
+	height: 25px;
+	text-align: center;
+	margin-top: 15px;
+	color: white;
+
+}
+
+#links{
+	margin-top: 15px;
+	text-align: center;
+	background-color: gainsboro;
+	height: 250px;
+}
+
+#links p{
+	margin-top: 10px;
+}
+
+#add-inv{
+	text-align: center;
+	margin-left: 278px;
+	margin-top: 25px;
 }
