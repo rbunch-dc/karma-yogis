@@ -16,7 +16,8 @@
 
                 <h2 style="color: #8a1617;">{{recipe.recipeName}}</h2>
                 <div> Ready In: {{recipe.prepTime }}</div>
-                <div>Rating: {{recipe.ratingStars}}</div>
+                <div>Rating: <img ng-src="{{recipe.ratingStarsImg}}">
+                </div>
                 <h4 style="color: #8a1617;">Ingredients</h4>
                 <div class="ing-list" ng-repeat="ingredient in recipe.ingredients">
                             <li>{{ingredient}}</li>

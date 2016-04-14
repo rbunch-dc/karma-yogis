@@ -7,13 +7,14 @@ recipeApp.factory('sharedData', function() {
     var sharedData = {};
     sharedData.searchTerm = "";
     sharedData.userProfile = {};
-    // sharedData.getUserProfile = function() {
-    //     return this.userProfile;
-    // };
-    // sharedData.setUserProfile = function(userProfile) {
-    //    this.userProfile = userProfile;
-    // };
-    //add other shared variables below.
+    sharedData.isLoggedIn = function () {
+        if ( sharedData.userProfile.email)  {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
 
     return sharedData;
 });

@@ -57,8 +57,8 @@ var userProfilePrefs = function(data) {
     this.nameFirst = data.nameFirst;
     this.nameLast = data.nameLast;
     this.password = data.password;
-  
-    this.favFood = data.favFood || [];  //array of strings ['s1', 's2']
+
+    this.favFood = data.favFood || []; //array of strings ['s1', 's2']
     this.inventory = data.inventory || []; //array of objects [type inventoryItem]
 };
 
@@ -154,8 +154,9 @@ var RecipeSearchResults = function(data) {
     this.recipeName = data.recipeName;
     this.thumbnailImageURL = data.imageURL;
     this.largeImageURL = data.largeImageURL;
-    this.rating = data.rating; // or Rating
-    // this.ingredientLines = data.ingredientLines;
+    this.rating = data.rating; 
+    this.ratingStars = data.ratingStars;
+    this.ratingStarsImg = data.ratingStarsImg;
     this.ingredients = data.ingredients;
     this.prepTime = data.prepTime;
 
@@ -185,26 +186,38 @@ function secondsToMin(seconds) {
     return time;
 }
 
+//var starsImages = ['assets/img/star1.jpg', 'assets/img/star2.jpg', 'assets/ig']
 //http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
 recipeApp.factory('recipesApi', function($http) {
     return {
-        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc, byIdBool, recipeId) {
+        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc, favCuisine) {
             //
             //http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=
             //   &maxResult    
             var _apiId = '&_app_id=' + apiId;
             var _apiKey = '&_app_key=' + apiKey;
             var _query = '&q=' + query;
-            var _maxRes = '&maxResult=' + max || 10;
-            var _URL = 'http://api.yummly.com/v1/api/recipes?';
-            var _URL_Id = 'http://api.yummly.com/v1/api/recipes' + recipeId + '?';
+            var _maxRes = '&maxResult=' + (max || 10);
+            var _cuisine = '&allowedCuisine[]=';
+            var _URL = 'http://api.yummly.com/v1/api/recipes?requirePictures=true';
+            // var _URL_Id = 'http://api.yummly.com/v1/api/recipes' + recipeId + '?';
             var results = {};
-            _URL = encodeURI(_URL + _apiKey + _apiId + _query + _maxRes);
+            var _cuisineList = [];
+            if (favCuisine) {
+                favCuisine.forEach(function(value) { 
+                    _cuisineList.push(_cuisine + 'cuisine^cuisine-' + value.toLowerCase()); 
+                });
+
+                // console.log(_cuisineList);
+                _URL = encodeURI(_URL + _apiKey + _apiId + _query + _maxRes + _cuisineList);
+            } else {
+                _URL = encodeURI(_URL + _apiKey + _apiId + _query + _maxRes);
+            }
             //console.log(_URL);
             $http.get(_URL).then(
                 /* success*/
                 function(response) {
-                    //console.log(response);
+                    // console.log(response);
                     RecipeArray = [];
                     var hits = response.data.matches;
                     for (var i = 0; i < hits.length && i < max; i++) {
@@ -213,6 +226,15 @@ recipeApp.factory('recipesApi', function($http) {
                         res.recipeId = hit.id;
                         res.recipeName = hit.recipeName;
                         res.rating = hit.rating;
+                        res.ratingStars = '';
+                        res.ratingStarsImg = 'assets/img/star.png';
+                        if (!isNaN(hit.rating)) {
+                            for (var x = 0; x<hit.rating; x++) {
+                                res.ratingStars += '*';
+                            }
+                             res.ratingStarsImg = 'assets/img/star' + hit.rating + '.png';
+                        }
+                       
                         res.sourceDisplayName = hit.sourceDisplayName;
                         if (hit.smallImageUrls && hit.smallImageUrls.length > 0) {
                             res.thumbnailImageURL = hit.smallImageUrls[0];
@@ -228,8 +250,8 @@ recipeApp.factory('recipesApi', function($http) {
                     // console.log(RecipeArray);
                     successFunc(RecipeArray);
                 },
-                /* error*/
                 function(errorRes) {
+                    console.log(errorRes);
                     failFunc(errorRes);
                 });
         }
