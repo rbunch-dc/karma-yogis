@@ -46,11 +46,13 @@
 				            <th><a href="" ng-click="">Item</a></th>
 				            <th>Quantity</th>
 				            <th>Unit of Measure</th>
+				            <th>Include Item?</th>
 				        </thead>
 				        <tr ng-repeat="inventoryItem in inventory track by $index">
 				            <td><a href="" ng-click="">{{inventoryItem.item}}</a></td>
 				            <td>{{inventoryItem.qty}}</td>
 				            <td>{{inventoryItem.uom}}</td>
+				            <td><input type="checkbox" ng-model="inventoryItem.checked"></td>
 				        </tr>
 				    </table>
 				</div>
