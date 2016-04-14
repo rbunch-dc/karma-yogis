@@ -9,9 +9,6 @@
 }
 
 #user-profile{
-	position: absolute;
-	top: 250px;
-	margin-top: 15px;
 	text-align: center;
 }
 #favs{
@@ -32,6 +29,7 @@
 	text-align: center;
 	background-color: gainsboro;
 	height: 250px;
+	border: 2px solid black;
 }
 
 #links p{
