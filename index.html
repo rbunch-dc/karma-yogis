@@ -32,24 +32,23 @@
                         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm reg-up">
                             <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text"> Sign up!</span>
                                 <a class="close" data-dismiss="modal">&times;</a>
-                                    <!-- Can use × if you are using html5 with utf8 charset -->
+                                <!-- Can use × if you are using html5 with utf8 charset -->
                                 <!-- <a class="close">×</a> -->
                             </legend>
-                                
                             <!-- <form action="#" method="" class="form" role="form"> -->
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-6">
-                                        <input class="form-control reg-control" name="firstname" ng-model="firstname" placeholder="First Name" type="text" required autofocus />
-                                    </div>
-                                    <div class="col-xs-6 col-md-6">
-                                        <input class="form-control reg-control" name="lastname" ng-model="lastname" placeholder="Last Name" type="text" required />
-                                    </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control reg-control" name="firstname" ng-model="firstname" placeholder="First Name" type="text" required autofocus />
                                 </div>
-                                <input class="form-control reg-control" name="youremail" ng-model="youremail" placeholder="Your Email" type="email" required />
-                                <input class="form-control reg-control" name="reenteremail" ng-model="reenteremail" placeholder="Re-enter Email" type="email" required />
-                                <input class="form-control reg-control" name="password" ng-model="password" placeholder="New Password" type="password" required />
-                                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit" ng-click="signUp()" >
-                                    Sign up</button>
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control reg-control" name="lastname" ng-model="lastname" placeholder="Last Name" type="text" required />
+                                </div>
+                            </div>
+                            <input class="form-control reg-control" name="youremail" ng-model="youremail" placeholder="Your Email" type="email" required />
+                            <input class="form-control reg-control" name="reenteremail" ng-model="reenteremail" placeholder="Re-enter Email" type="email" required />
+                            <input class="form-control reg-control" name="password" ng-model="password" placeholder="New Password" type="password" required />
+                            <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit" ng-click="signUp()">
+                                Sign up</button>
                             <!-- </form> -->
                         </div>
                     </div>
@@ -69,7 +68,8 @@
                             <input ng-click="loginSubmit()" type="submit" name="login" class="login loginmodal-submit" value="Login">
                         </form>
                         <div class="login-help">
-                            <a href="javascript(void);">Register</a> - <a href="javascript(void);">Forgot Password</a>
+                            <a href="" ng-click="signupFromLogin()">Register</a>
+                            <!--  <a href="javascript(void);">Register</a> - <a href="javascript(void);">Forgot Password</a> -->
                         </div>
                     </div>
                 </div>
@@ -90,21 +90,27 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                    <li><a href="" ng-click="routeToNextPage('recipe')"><span class="glyphicon glyphicon-cutlery"></span> Recipes</a></li>
-                        <!-- <li><a href="#"><span class="   glyphicon glyphicon-list-alt"></span> Profile</a></li>   -->        
+                        <li class="active"><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                        <li><a href="" ng-click="routeToNextPage('recipe')"><span class="glyphicon glyphicon-cutlery"></span> Recipes</a></li>
+                        <!-- <li><a href="#"><span class="   glyphicon glyphicon-list-alt"></span> Profile</a></li>   -->
                         <li><a href="" ng-click="routeToNextPage('inventory')"><span class="glyphicon glyphicon-list-alt"></span> User Profile</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <!--   <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Help</a></li> -->
-                        <li class="dropdown">
+                    <ul class="nav navbar-nav navbar-right" ng-init="loggedIn=false" ng-cloak>
+                        <!--   <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Help</a></li> -->
+                        <li class="dropdown" ng-show="!loggedIn">
                             <a href="javascript(void);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login In | Sign Up <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal">Login</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="javascript(void);" data-toggle="modal" data-target="#sign-up-modal">Sign Up!</a></li>
                             </ul>
-                           <!--  <li><a href="javascript(void);">About Us</a></li> -->
+                        </li>
+                        <li id="logged-in-info" ng-show="loggedIn" style="padding-top: 15px;">
+                            <ul class="list-inline navbar-nav">
+                                <li><a href="" ng-click="logoutSubmit()">Sign Out</a></li>
+                                <li> | </li>
+                                <li>Logged In: {{nameFirst}} &nbsp; {{nameLast}}</li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -129,10 +135,8 @@
         </nav>
         <div ng-view></div>
     </div>
-
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570efc20d74ff677"></script>
-
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570efc20d74ff677"></script>
 </body>
 
 </html>

@@ -9,6 +9,13 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
     utilLocalStore.setUserPswd('123');
 
 
+    $scope.logoutSubmit = function() {
+        //remove the userProfile:
+        sharedData.userProfile = {};
+        //toggle loggedIn
+        $scope.loggedIn = false;
+    };
+
     $scope.loginSubmit = function() {
 
         var userData = userStore.getUser($scope.userEmail);
@@ -20,11 +27,21 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
             sharedData.userProfile = userData;
             console.log('successful login');
             console.log(sharedData.userProfile);
+            $scope.loggedIn = true;
+            $scope.nameFirst = sharedData.userProfile.nameFirst;
+            $scope.nameLast = sharedData.userProfile.nameLast;
             $('#login-modal').modal('hide');
         } else {
             $scope.message = "Invalid Info";
         }
 
+
+    };
+
+    $scope.signupFromLogin = function() {
+        $('#login-modal').modal('hide');
+
+        $('#sign-up-modal').modal('show');
     };
 
     $scope.signUp = function() {
@@ -40,8 +57,8 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
 
         var newUser = new userProfilePrefs();
         newUser.email = $scope.youremail;
-        newUser.nameFirst = $scope.firstname;
-        newUser.nameLast = $scope.lastname;
+        newUser.nameFirst = upFirstChar($scope.firstname);
+        newUser.nameLast = upFirstChar($scope.lastname);
         newUser.password = $scope.password;
         newUser.favFood = [];
         newUser.inventory = [];
@@ -62,7 +79,8 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         // console.log(userProfile);
         // console.log(bad);
         if ( isNullOrEmpty(userProfile.email) ) {
-            alert('not logged in');
+            $('#login-modal').modal('show');
+            // alert('not logged in');
             return;
         }
         console.log($location.path());

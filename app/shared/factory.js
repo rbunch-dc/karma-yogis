@@ -161,6 +161,10 @@ var RecipeSearchResults = function(data) {
 
 };
 
+function upFirstChar(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function secondsToMin(seconds) {
     var minutes = Math.ceil(seconds / 60);
     var time = '';
