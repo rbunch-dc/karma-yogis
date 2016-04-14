@@ -73,6 +73,7 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 
 	function foodItem(cuisine){
 		this.cuisine = cuisine;
+		this.include = include;
 	}
 
 	$scope.includeSelected = function(include, index){
@@ -83,7 +84,16 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 		userStore.setUser(sharedData.userProfile);
 	}
 
+	$scope.removeItem = function(index){
+		alert("Do you want to remove this item?");
+		
+		sharedData.userProfile.inventory.splice(index,1);
+	}
 
+	$scope.includeCuisine = function(include, index) {
+		sharedData.userProfile.favFood[index].include = include;
+		userStore.setUser(sharedData.userProfile);
+	}
 
 // multi-user version
 // var user = new userProfilePrefs();
