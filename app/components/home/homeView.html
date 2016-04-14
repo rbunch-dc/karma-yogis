@@ -1,24 +1,27 @@
 
 
 
-<div id="content-wrapper" class="container" ng-init="search(' ')">
+<div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
     <div class="row">
 
         <div  class="col-md-12">
-            <div class="main-trending col-md-5 food-content text-center panel panel-default card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
-                <a href="{{ createRecipeUrl(recipe.recipeId) }}">
+            <div class="main-trending col-md-3 col-md-offset-1 food-content text-center panel panel-default card ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
+                <!-- <a href="{{ createRecipeUrl(recipe.recipeId) }}"> -->
                     <img ng-src="{{ recipe.largeImageURL }}">
-                </a>
+              <!--   </a> -->
 
-                <h3><a href="{{ createRecipeUrl(recipe.recipeId) }}" >{{ recipe.recipeName }}</a></h3>
+                <h3><a href="#" >{{ recipe.recipeName }}</a></h3>
                 <div> Ready In: {{recipe.prepTime }}</div>
                 <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
-                <a href="">{{ recipe.sourceDisplayName }}</a>  
+                <h4>{{ recipe.sourceDisplayName }}</h4>
             </div>
         </div>
     </div>
 </div>      
-<div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
+
+
+<!-- {{ createRecipeUrl(recipe.recipeId) }} -->
+<!-- <div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
     <div class="row">
         <div class="col-md-2">
             <div class="col-md-12 text-center panel panel-default trending" ng-repeat="recipe in recipes">
@@ -34,7 +37,7 @@
         </div>
 
     </div>
-</div>
+</div> -->
 
 
 
