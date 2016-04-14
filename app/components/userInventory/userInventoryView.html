@@ -3,7 +3,7 @@
 		<div class="row header">
 			<div id="profile" class="col-lg-11 panel panel-default">
 				<div class="col-lg-3 text-center" id="user-profile">
-					<img id="user" src="http://placehold.it/315x250">
+					<img id="user" src="../../assets/img/placeholderprofileimage.png">
 					<p ng-model="userProfile">{{email}}</p>
 				</div>
 				<div class="col-lg-5" id="favs">
@@ -101,7 +101,7 @@
 					            <th>Include Item?</th>
 					        </thead>
 					        <tr ng-repeat="favoriteFood in favFood track by $index">
-					            <td><a href="" ng-click="">{{favoriteFood.cuisine}}</a></td>
+					            <td><a href="" ng-click="removeCuisine()">{{favoriteFood.cuisine}}</a></td>
 					            <td><label>
 									    <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="ifavoriteFood.cuisine" ng-model="include" ng-change="includeCuisine(include, $index)">
 									</label>
