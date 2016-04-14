@@ -14,7 +14,7 @@ recipeApp.controller('recipeController', function($scope, sharedData, utilLocalS
     //(max, query, apiKey, apiId, successFunc, failFunc)
     function successFunc(data) {
         $scope.recipes = data.sort(descendingRating);
-        console.log($scope.recipes);
+        //console.log($scope.recipes);
     }
 
     function failFunc(error) {

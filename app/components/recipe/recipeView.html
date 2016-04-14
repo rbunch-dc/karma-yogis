@@ -1,16 +1,24 @@
-<div class="container">
-    <div class="ng-cloak" ng-repeat="recipe in recipes | orderBy: sgSortOrder">
-        <div class="row">
-            <div class="col-md-12"  style="border: 1px solid red;">
-                <div class="col-md-6">
-                    <img ng-src="{{recipe.largeImageURL}}">
-                </div>
-                <div col="col-md-6">
-                    <div ng-repeat="ingredient in recipe.ingredients">
-                        {{ingredient}}
+<div id="content-wrapper" class="container-fluid" ng-cloak>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="col-md-12 panel panel-default">
+                <div ng-repeat="recipe in recipes">
+                    <div style="border: 1px solid red">
+                        <div style="float: left">
+                            <img ng-src="{{recipe.largeImageURL}}">
+                        </div>
+                        <div> Ready In: {{recipe.prepTime }}</div>
+                        <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
+                <a href="">{{ recipe.sourceDisplayName }}</a> 
+                        <div ng-repeat="ingredient in recipe.ingredients">
+                            {{ingredient}}
+                        </div>
+                        <div style="clear: both"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-4 col-offset-1">
     </div>
 </div>

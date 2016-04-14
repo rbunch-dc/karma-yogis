@@ -181,10 +181,10 @@ function secondsToMin(seconds) {
     return time;
 }
 
-
+//http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
 recipeApp.factory('recipesApi', function($http) {
     return {
-        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc) {
+        getRecipes: function(max, query, apiKey, apiId, successFunc, failFunc, byIdBool, recipeId) {
             //
             //http://api.yummly.com/v1/api/recipes?_app_id=e0a0ad85&_app_key=30d09c4f5cd26c2e94067912d367b9c6&maxResult=50&q=
             //   &maxResult    
@@ -193,12 +193,14 @@ recipeApp.factory('recipesApi', function($http) {
             var _query = '&q=' + query;
             var _maxRes = '&maxResult=' + max || 10;
             var _URL = 'http://api.yummly.com/v1/api/recipes?';
+            var _URL_Id = 'http://api.yummly.com/v1/api/recipes' + recipeId + '?';
             var results = {};
             _URL = encodeURI(_URL + _apiKey + _apiId + _query + _maxRes);
             //console.log(_URL);
             $http.get(_URL).then(
                 /* success*/
                 function(response) {
+                    console.log(response);
                     RecipeArray = [];
                     var hits = response.data.matches;
                     for (var i = 0; i < hits.length && i < max; i++) {
