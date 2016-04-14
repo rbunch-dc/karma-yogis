@@ -85,7 +85,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#/">My Grub</a>
+                    <a class="navbar-brand" href="#/"><img class="mouth" src="assets/img/mouth200x.png">My Grub</a>
+
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -117,7 +118,12 @@
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
-            <div class="bottom-search container text-center">
+            
+            <div id="search-wrapper">
+                <!--    Place holder for moving div! Using this div to have a background color follow the search bar from the toggle collapse. -->
+                <div class="container"><img class="logo" src="assets/img/logo.png" alt=""></div>
+                <img class="icon" src="assets/img/icon.png" alt="">
+                <div class="bottom-search container text-center">
                 <div class="search-bar">
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
@@ -127,10 +133,7 @@
                     </form>
                 </div>
             </div>
-            <div id="search-wrapper">
-                <!--    Place holder for moving div! Using this div to have a background color follow the search bar from the toggle collapse. -->
-                <div class="container"><img class="logo" src="assets/img/logo.png" alt=""></div>
-                <img class="icon" src="assets/img/icon.png" alt="">
+
             </div>
         </nav>
         <div ng-view></div>
