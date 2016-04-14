@@ -25,8 +25,8 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         }
         if ($scope.userPass === userData.password) {
             sharedData.userProfile = userData;
-            console.log('successful login');
-            console.log(sharedData.userProfile);
+            // console.log('successful login');
+            // console.log(sharedData.userProfile);
             $scope.loggedIn = true;
             $scope.nameFirst = sharedData.userProfile.nameFirst;
             $scope.nameLast = sharedData.userProfile.nameLast;
@@ -91,18 +91,6 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         $location.path(next);
 
     };
-    // $scope.routeToRecipeView = function() {
-    //     // console.log($scope.searchTerm);
-    //     //grab the searchTerm (ng-model) and assign to the sharedData factory so other controllers and use it.
-    //     sharedData.searchTerm = $scope.searchTerm;
-    //     //now route to the recipe controller & view
-    //     console.log($location.path());
-    //     if ($location.path() == '/recipe') {
-    //         $route.reload();
-    //     }
-    //     $location.path('/recipe');
-
-    // };
 
     function isNullOrEmpty(value) {
         return !value;
