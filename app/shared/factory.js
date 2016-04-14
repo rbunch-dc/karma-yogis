@@ -103,13 +103,14 @@ WeatherSearchResults.prototype.sunsetLocalTime = function() {
 
 recipeApp.factory('weatherApi', function($http) {
     return {
-        getWeather: function(city, apiKey, successFunc, failFunc) {
+        getWeather: function(cityOrZip, successFunc, failFunc) {
+            var apiKey = '7496eb8b9ef9616cf145982ce0a992fe';
             var apiKeyParam = '&APPID=' + apiKey;
             var unitsParam = '&units=imperial';
             var searchParam = '?q=';
             var weatherURL = 'http://api.openweathermap.org/data/2.5/weather';
             var iconURL = 'http://openweathermap.org/img/w/';
-            var URL = encodeURI(weatherURL + searchParam + city + unitsParam + apiKeyParam);
+            var URL = encodeURI(weatherURL + searchParam + cityOrZip + ',us' + unitsParam + apiKeyParam);
             //console.log("Weather url = " + URL);
             $http.get(URL).then(
                 /* success*/

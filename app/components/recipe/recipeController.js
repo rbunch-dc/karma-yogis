@@ -2,9 +2,9 @@ recipeApp.controller('recipeController', function($scope, $location, sharedData,
 
 //This block must be at the top of this controller
 // if no one is logged in but enter http://..../#/recipe [or inventory] send them to the home page
-        if ( !sharedData.isLoggedIn() ) {
-           $location.path('/');
-        }    
+        // if ( !sharedData.isLoggedIn() ) {
+        //    $location.path('/');
+        // }    
 //-----
     console.log("search term = " + sharedData.searchTerm);
 
