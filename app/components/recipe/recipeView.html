@@ -1,24 +1,41 @@
 <div id="content-wrapper" class="container-fluid" ng-cloak>
     <div class="row">
-        <div class="col-md-8">
-            <div class="col-md-12 panel panel-default">
-                <div ng-repeat="recipe in recipes">
-                    <div style="border: 1px solid red">
-                        <div style="float: left">
-                            <img ng-src="{{recipe.largeImageURL}}">
-                        </div>
-                        <div> Ready In: {{recipe.prepTime }}</div>
-                        <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
-                <a href="">{{ recipe.sourceDisplayName }}</a> 
-                        <div ng-repeat="ingredient in recipe.ingredients">
-                            {{ingredient}}
-                        </div>
-                        <div style="clear: both"></div>
+        <div class="col-md-12">
+            <div class="main-recipe-content col-md-5 food-content panel panel-default ng-cloak" ng-repeat="recipe in recipes">
+              <div class="recipe-thumbnail">  
+                <img class="" ng-src="{{recipe.largeImageURL}}" style="width: auto; padding-right: 15px; border-radius: 4px;">
                     </div>
-                </div>
+                    <div class="recipe-text-content"> 
+                        <h2>{{recipe.recipeName}}</h2>
+                        <div>Ready In: {{recipe.prepTime}}</div>
+                        <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
+                        <br>
+                        <h4 style="color: #8a1617;">Ingredients</h4>
+                        <div ng-repeat="ingredient in recipe.ingredients">
+                            <li>{{ingredient}}</li>
+                        </div>
+                        <h4>{{recipe.sourceDisplayName}}</h4>
+                    </div>
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-offset-1">
-    </div>
 </div>
+<!-- 
+                <div class="col-md-8">
+            <div class="col-md-12 panel panel-default">
+                <div ng-repeat="recipe in recipes">
+            
+                        <img class="img-responsive pull-left" ng-src="{{recipe.largeImageURL}}">
+         
+                        <h2 class="recipe-title">{{ recipe.sourceDisplayName }}</h2> 
+                        <br>
+                        <div>Ready In: {{recipe.prepTime }}</div>
+                        <div class="{{ recipe.rating }}">Rating: {{recipe.rating}}</div>
+                         <div ng-repeat="ingredient in recipe.ingredients">
+                            <li>{{ingredient}}</li>
+                        </div>
+                       
+     
+                    </div>
+                </div>
+            </div> -->
