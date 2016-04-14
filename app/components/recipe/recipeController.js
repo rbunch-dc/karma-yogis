@@ -14,7 +14,7 @@ recipeApp.controller('recipeController', function($scope, sharedData, utilLocalS
     //(max, query, apiKey, apiId, successFunc, failFunc)
     function successFunc(data) {
         $scope.recipes = data.sort(descendingRating);
-        console.log($scope.recipes);
+        //console.log($scope.recipes);
     }
 
     function failFunc(error) {
@@ -22,6 +22,16 @@ recipeApp.controller('recipeController', function($scope, sharedData, utilLocalS
     }
 
     $scope.searchRecipes();
+
+     $scope.searchRecipesByInventory = function() {
+        //var searhParm = $scope.searchTerm;
+        var query = sharedData.userProfile;
+        console.log('search by inventory query below');
+        console.log(query);
+        //recipesApi.getRecipes(_max, _apiKey, _apiId, successFunc, failFunc);
+    };
+
+    $scope.searchRecipesByInventory();
 
 //compare function for sorting the recipes by rating in descending order
     function descendingRating(a, b) {

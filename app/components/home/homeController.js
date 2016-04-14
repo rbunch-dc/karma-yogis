@@ -5,7 +5,7 @@ var homeController = function($scope, $http, recipesApi, sharedData) {
 
     var _apiId = 'e0a0ad85';
     var _apiKey = '30d09c4f5cd26c2e94067912d367b9c6';
-    var _max = 30;
+    var _max = 300;
    
     var onSearchComplete = function(response) {
         //$log.info($scope.loadingClass);
