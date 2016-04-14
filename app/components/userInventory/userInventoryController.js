@@ -71,7 +71,7 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 		this.include = include;
 	}
 
-	function foodItem(cuisine){
+	function foodItem(cuisine, include){
 		this.cuisine = cuisine;
 		this.include = include;
 	}
@@ -85,14 +85,30 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	}
 
 	$scope.removeItem = function(index){
-		alert("Do you want to remove this item?");
-		
-		sharedData.userProfile.inventory.splice(index,1);
+		var result = confirm("Do you want to remove this item?");
+		if( result === true){
+			sharedData.userProfile.inventory.splice(index,1);
+			//$scope.inventory.splice(index, 1);
+			userStore.setUser(sharedData.userProfile);
+		}else if (result === false){
+			return;
+		}
 	}
 
 	$scope.includeCuisine = function(include, index) {
 		sharedData.userProfile.favFood[index].include = include;
 		userStore.setUser(sharedData.userProfile);
+	}
+
+	$scope.removeCuisine = function(index){
+		var result = confirm("Do you want to remove this cuisine?");
+		if( result === true){
+			sharedData.userProfile.favFood.splice(index,1);
+			//$scope.inventory.splice(index, 1);
+			userStore.setUser(sharedData.userProfile);
+		}else if (result === false){
+			return;
+		}
 	}
 
 // multi-user version

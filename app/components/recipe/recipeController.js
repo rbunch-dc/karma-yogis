@@ -23,17 +23,42 @@ recipeApp.controller('recipeController', function($scope, sharedData, utilLocalS
 
     $scope.searchRecipes();
 
-     $scope.searchRecipesByInventory = function() {
-        //var searhParm = $scope.searchTerm;
-        var query = sharedData.userProfile;
-        console.log('search by inventory query below');
-        console.log(query);
-        //recipesApi.getRecipes(_max, _apiKey, _apiId, successFunc, failFunc);
+    function successFuncInv(data) {
+
+      //  console.log(data);
+        $scope.recommendations = data.sort(descendingRating);
+    }
+
+    function failFuncInv(error) {
+        console.log("Cuisine Error: " + error);
+    }
+
+
+    $scope.getRecommendedRecipes = function() {
+        //var searhParm = $scope.searchTerm;  //include
+        var _queryInvItemsIncl = "";
+        // console.log(sharedData.userProfile.inventory);
+        if (sharedData.userProfile.inventory) {
+            sharedData.userProfile.inventory.forEach(function(val) {
+                if (val.include) {
+                    _queryInvItemsIncl += _queryInvItemsIncl + ' ' + val.item;
+                }
+            });
+        }
+        var favCuisines = [];
+        if (sharedData.userProfile.favFood) {
+            sharedData.userProfile.favFood.forEach(function(val) {
+                if (val.include) {
+                    favCuisines.push(val.cuisine);
+                }
+            });
+        }
+        recipesApi.getRecipes(10, _queryInvItemsIncl, _apiKey, _apiId, successFuncInv, failFuncInv, favCuisines);
     };
 
-    $scope.searchRecipesByInventory();
+    $scope.getRecommendedRecipes();
 
-//compare function for sorting the recipes by rating in descending order
+    //compare function for sorting the recipes by rating in descending order
     function descendingRating(a, b) {
         return b.rating - a.rating;
     }
