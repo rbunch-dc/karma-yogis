@@ -1,5 +1,10 @@
-recipeApp.controller('userInventoryController', function($scope, userStore, sharedData) {
-
+recipeApp.controller('userInventoryController', function($scope, $location, userStore, sharedData) {
+//This block of code MUST be at the top of this controller
+// if no one is logged in but enter http://..../#/recipe [or inventory] send them to the home page
+        if ( !sharedData.isLoggedIn() ) {
+           $location.path('/');
+        }    
+//-----------
 var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard14@gmail.com");
 
 	// $scope.inventory = sharedData.userProfile.inventory;
