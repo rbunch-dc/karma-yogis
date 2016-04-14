@@ -10,7 +10,11 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 
 	$scope.addInventoryItem = function() {
 		var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom);
-	    $scope.inventory.push(invItem);
+		if (!$scope.inventory) {
+				$scope.inventory = [];
+		}
+
+	  $scope.inventory.push(invItem);
 	 	$scope.newInventoryItem = '';
 
 	 	if (!sharedData.userProfile.inventory ) {

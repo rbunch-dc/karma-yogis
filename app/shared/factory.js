@@ -200,7 +200,7 @@ recipeApp.factory('recipesApi', function($http) {
             $http.get(_URL).then(
                 /* success*/
                 function(response) {
-                    console.log(response);
+                    //console.log(response);
                     RecipeArray = [];
                     var hits = response.data.matches;
                     for (var i = 0; i < hits.length && i < max; i++) {
