@@ -2,9 +2,9 @@
 	<div id="container">
 		<div class="row header">
 			<div id="profile" class="col-lg-12 panel panel-default">
-				<div class="col-lg-3" id="user-profile">
+				<div class="col-lg-3 text-center" id="user-profile">
 					<img id="user" src="http://placehold.it/315x250">
-					<p ng-model="userProfile">{{userProfile.nameFirst}}</p>
+					<p ng-model="userProfile">{{email}}</p>
 				</div>
 				<div class="col-lg-5" id="favs">
 					<p class="text-center"><a href="#">Must try</a></p>
@@ -63,16 +63,34 @@
 				</div>
 				<div id="favorites" class="col-sm-5 panel panel-default">
 					<div id="add-fav" class="col-sm-6">
-						<form ng-submit="addInventoryItem()" name="fav-form">
-							<select class="form-control">
-  								<option>Mexican</option>
-  								<option>Chinese</option>
+						<form ng-submit="addFavorite()" name="fav-form">
+							<select class="form-control" ng-model="selectCuisine">
   								<option>American</option>
-  								<option>Thai</option>
   								<option>Italian</option>
+  								<option>Asian</option>
+  								<option>Mexican</option>
+  								<option>Southern & Soul Food</option>
   								<option>French</option>
+  								<option>Southwestern</option>
+  								<option>Barbecue</option>
+  								<option>Indian</option>
+  								<option>Chinese</option>
+  								<option>Cajun & Creole</option>
+  								<option>English</option>
+  								<option>Mediterranean</option>
+  								<option>Greek</option>
+  								<option>Spanish</option>
+  								<option>German</option>
+  								<option>Thai</option>
+  								<option>Moroccan</option>
+  								<option>Irish</option>
+  								<option>Japanese</option>
+  								<option>Cuban</option>
+  								<option>Hawaiin</option>
+  								<option>Swedish</option>
+  								<option>Hungarian</option>
+  								<option>Portugese</option>
   							</select>
-							<input type="text" class="form-control" ng-model="type" placeholder="Type">
 							<input type="submit" value="Add Favorite">
 						</form> 
 					</div>
@@ -80,12 +98,10 @@
 						<table class="table table-hover">
 					        <thead>
 					            <th><a href="" ng-click="">Cuisine</a></th>
-					            <th>Type</th>
 					            <th>Include Item?</th>
 					        </thead>
-					        <tr ng-repeat="inventoryItem in inventory track by $index">
-					            <td><a href="" ng-click="">{{inventoryItem.item}}</a></td>
-					            <td>{{inventoryItem.qty}}</td>
+					        <tr ng-repeat="favoriteFood in favFood track by $index">
+					            <td><a href="" ng-click="">{{favoriteFood.cuisine}}</a></td>
 					            <td><label>
 									    <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
 									</label>

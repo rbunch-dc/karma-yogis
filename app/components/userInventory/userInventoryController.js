@@ -4,7 +4,8 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 
 	// $scope.inventory = sharedData.userProfile.inventory;
 	$scope.inventory = userProfile.inventory;
-
+	$scope.email = userProfile.email;
+	$scope.favFood = userProfile.favFood;
 	//utilLocalStore.getInventory() || [];
 	console.log(sharedData.userProfile);
 
@@ -29,6 +30,31 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	 	console.log(sharedData.userProfile);
 	};
 	
+
+
+	$scope.addFavorite = function(){
+
+		var favoriteFood = new foodItem($scope.selectCuisine);
+		if (!$scope.favFood) {
+			$scope.favFood = [];
+		}
+
+		$scope.favFood.push(favoriteFood);
+		$scope.newFavoriteFood = '';
+
+		if (!sharedData.userProfile.favFood){
+			sharedData.userProfile.favFood = [];
+		}
+		
+		//userProfile.favFood.push(favoriteFood);
+
+		sharedData.userProfile = userProfile;
+		userStore.setUser(userProfile);
+
+		console.log(sharedData);
+		console.log(sharedData.userProfile);
+
+	};
 	//utilLocalStore.setInventory($scope.inventory);
 
 	//console.log(inventory);
@@ -43,6 +69,13 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 		this.qty = qty;
 		this.uom = uom;
 	}
+
+	function foodItem(cuisine){
+		this.cuisine = cuisine;
+	}
+
+
+
 
 // multi-user version
 // var user = new userProfilePrefs();
