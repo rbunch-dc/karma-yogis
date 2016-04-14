@@ -10,7 +10,7 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	console.log(sharedData.userProfile);
 
 	$scope.addInventoryItem = function() {
-		var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom);
+		var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom, false);
 		if (!$scope.inventory) {
 				$scope.inventory = [];
 		}
@@ -21,7 +21,7 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	 	if (!sharedData.userProfile.inventory ) {
 	 		sharedData.userProfile.inventory = [];
 	 	}
-	 	userProfile.inventory.push(invItem);
+	 	//userProfile.inventory.push(invItem);
 
 	    sharedData.userProfile = userProfile;
 	    userStore.setUser(userProfile);
@@ -64,16 +64,24 @@ var userProfile = sharedData.userProfile;   //userStore.getUser("jeremyhilliard1
 	// console.log(item);
 
 
-	function inventoryItem(item, qty, uom){
+	function inventoryItem(item, qty, uom, include){
 		this.item = item;
 		this.qty = qty;
 		this.uom = uom;
+		this.include = include;
 	}
 
 	function foodItem(cuisine){
 		this.cuisine = cuisine;
 	}
 
+	$scope.includeSelected = function(include, index){
+		console.log(include);
+		console.log(index);
+
+		sharedData.userProfile.inventory[index].include = include;
+		userStore.setUser(sharedData.userProfile);
+	}
 
 
 
