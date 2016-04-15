@@ -1,3 +1,15 @@
+//Global funcitons go here
+// trunc will truncate a string, backup to a space and add ellips
+String.prototype.trunc = String.prototype.trunc ||
+    function(n, isHtml) {
+        if (isHtml) {
+            return (this.length > n) ? this.substr(0, n - 1) + '&hellip;' : this;
+        } else {
+            return (this.length > n) ? this.substr(0, n - 1) + '...' : this;
+        }
+    };
+
+//-----------
 recipeApp.factory('sharedData', function() {
     // var sharedData = {
     //     searchTerm: '',
@@ -37,7 +49,7 @@ recipeApp.factory('sharedData', function() {
     sharedData.getRandomCuisines = function(number) {
         var ndx = 0;
         var list = [];
-        for (var i=0; i<number; i++) {
+        for (var i = 0; i < number; i++) {
             ndx = Math.floor(Math.random() * cuisineList.length);
             list.push(cuisineList[ndx]);
         }
@@ -46,7 +58,7 @@ recipeApp.factory('sharedData', function() {
     sharedData.getRandomFoods = function(number) {
         var ndx = 0;
         var list = [];
-        for (var i=0; i<number; i++) {
+        for (var i = 0; i < number; i++) {
             ndx = Math.floor(Math.random() * foodList.length);
             list.push(foodList[ndx]);
         }
