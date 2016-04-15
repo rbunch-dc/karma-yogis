@@ -18,9 +18,15 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
+                <button id="btn-recommend"class="btn btn-lg btn-primary btn-block recommend-btn btn-disabled" style="
+                    position: relative;
+                    top: 220px;
+                    right: -40px;
+                    width: 66%;">Your Food Recommandations</button>
                 <div class="col-md-8 col-md-offset-2 text-left panel panel-default card ng-cloak" ng-repeat="recipe in recommendations">
-                    <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
+                    <h6 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h6>
                     <div class="food-image text-center">
                         <a href="{{ createRecipeUrl(recipe.recipeId) }}">
                             <img ng-src="{{ recipe.largeImageURL }}">

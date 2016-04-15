@@ -161,6 +161,39 @@ legend {
     background-color: #db2427;
 }
 
+.recommend-btn {
+    background-color: #8a1617;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border: 0px;
+    color: white;
+}
+
+.recommend-btn:hover {
+    background-color: #8a1617;
+    border: 0px;
+    color: white;
+}
+
+.recommend-btn:active {
+    background-color: #8a1617;
+    border: 0px;
+    color: white;
+}
+
+.recommend-btn:link {
+    background-color: #8a1617;
+    border: 0px;
+    color: white;
+}
+
+.recommend-btn:visited {
+    background-color: #8a1617;
+    border: 0px;
+    color: white;
+}
+
+
 .navbar-form input.form-control {
     width: 350px;
 }
