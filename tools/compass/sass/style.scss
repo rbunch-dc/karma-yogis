@@ -107,7 +107,7 @@ img.mouth {
 
 .icon {
     position: absolute;
-    top: 0px;
+    top: -3px;
     right: 0px;
     width: 150px;
     height: 150px;
@@ -125,6 +125,14 @@ img.mouth {
 .logo-banner {
     float: left;
     width: 35%;
+}
+
+.logo-banner-two {
+    float: left;
+    width: 20%;
+    position: relative;
+    top: -15px;
+    left: -11px;
 }
 
 .reg-up {
@@ -183,7 +191,7 @@ legend {
     .panel {
     margin-bottom: 20px;
     margin-left: 0px;
-    top: 210px;
+    // top: 210px;
     }
     .search-bar {
         top: 140px;
@@ -226,6 +234,7 @@ legend {
     min-height: 150px;
     background-image: url("../img/headertex2.jpg");
     border-bottom: 3px solid #8a1617;
+    border-top: 3px solid #8a1617;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -495,8 +504,9 @@ body.pg-loaded > .inner {
 }
 
 #profile{
-    border: 2px solid black;
-   background-image: url("../img/recipecard2.jpg");
+    border: 2px solid #db2427;
+    background-image: none;
+    background-color: #dc514f;
 }
 
 #user-profile{
@@ -508,9 +518,11 @@ body.pg-loaded > .inner {
 }
 
 #favs p{
-    background-color: black;
+    border-radius: 5px;
+    background-color: #8a1617;
     height: 30px;
     text-align: center;
+    padding-top: 5px;
     margin-top: 20px;
     margin-left: 80px;
     color: white;
@@ -523,7 +535,6 @@ body.pg-loaded > .inner {
     margin-top: 40px;
     margin-left: 100px;
     text-align: center;
-    // background-color: #f4f095;
     height: 250px;
     border: 2px solid black;
     border-radius: 5px;
@@ -536,12 +547,12 @@ body.pg-loaded > .inner {
 }
 
 #inventory{
-    // background-image: none;
-    background-color: gainsboro;
+    background-image: none;
+    background-color: #dc514f;
     text-align: center;
     margin-top: 25px;
     margin-left: 25px;
-    border: 2px solid black;
+    border: 2px solid #db2427;
 }
 
 #add-inv{
@@ -553,12 +564,12 @@ body.pg-loaded > .inner {
 }
 
 #favorites{
-    // background-image: none;
-    background-color: gainsboro;
+    background-image: none;
+    background-color: #dc514f;
     text-align: center;
     margin-top: 25px;
     margin-left: 28px;
-    border: 2px solid black;
+    border: 2px solid #db2427;
     min-height: 215px;
 }
 
