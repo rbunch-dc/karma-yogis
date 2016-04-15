@@ -141,6 +141,7 @@ recipeApp.factory('weatherApi', function($http) {
     };
 });
 
+//create common model to represent data from the recipe provider.
 var RecipeArray = [];
 var RecipeIngredient = function(data) {
     data = data || {};
@@ -227,7 +228,7 @@ recipeApp.factory('recipesApi', function($http) {
                         var hit = hits[i];
                         res = new RecipeSearchResults({});
                         res.recipeId = hit.id;
-                        res.recipeName = hit.recipeName;
+                        res.recipeName = hit.recipeName.trunc(30, true);
                         res.rating = hit.rating;
                         res.ratingStars = '';
                         res.ratingStarsImg = 'assets/img/star.png';
