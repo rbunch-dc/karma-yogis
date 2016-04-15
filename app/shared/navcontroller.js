@@ -60,6 +60,8 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         newUser.nameFirst = upFirstChar($scope.firstname);
         newUser.nameLast = upFirstChar($scope.lastname);
         newUser.password = $scope.password;
+        newUser.city = $scope.city;
+        newUser.zip = $scope.zip;
         newUser.favFood = [];
         newUser.inventory = [];
         userStore.setUser(newUser);

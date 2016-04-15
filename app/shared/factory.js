@@ -57,7 +57,9 @@ var userProfilePrefs = function(data) {
     this.nameFirst = data.nameFirst;
     this.nameLast = data.nameLast;
     this.password = data.password;
-
+    this.city = data.city;
+    this.state = data.state;
+    this.zip = data.zip;
     this.favFood = data.favFood || []; //array of strings ['s1', 's2']
     this.inventory = data.inventory || []; //array of objects [type inventoryItem]
 };

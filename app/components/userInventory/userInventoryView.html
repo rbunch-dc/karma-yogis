@@ -1,117 +1,131 @@
-
-	<div id="container">
-		<div class="row inv-profile-header">
-			<div id="profile" class="col-lg-11 panel panel-bg">
-				<div class="col-lg-3 text-center" id="user-profile">
-					<img id="user" src="../../assets/img/placeholderprofileimage.png">
-					<p ng-model="userProfile">{{email}}</p>
-				</div>
-				<div class="col-lg-9">
-					<div id="favs" class="col-sm-4">
-					<p class="text-center"><a href="#">Must try</a></p>
-					<p class="text-center"><a href="#">To Share</a></p>
-					<p class="text-center"><a href="#">Queue</a></p>
-					</div>
-					<div id="links" class="col-lg-5">
-						<div class="col-sm-12">
-							<p class="text-center"><a href="#">Family</a></p>
-							<p class="text-center">Mom</p>
-							<p class="text-center">Dad</p>
-						</div>
-						<div class="col-sm-12">
-							<p class="text-center"><a href="#">Friends</a></p>
-							<p class="text-center">Steve</p>
-							<p class="text-center">Ashley</p>
-						</div>
-						<div class="col-sm-12">
-							<p class="text-center"><a href="#">Followers</a></p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<div id="tables" class="row">
-			<div id="inv-favs" class="col-sm-12">
-				<div id="inventory" class="col-sm-6 panel panel-bg">
-					<div id="add-inv" class="col-sm-6">
-						<form ng-submit="addInventoryItem()" name="form">
-							<input type="text" class="form-control" ng-model="item" placeholder="Item">
-							<input type="text" class="form-control" ng-model="qty" placeholder="Quantity">
-							<input type="text" class="form-control" ng-model="uom" placeholder="Unit of Measure">
-							<input class="btn btn-default" type="submit" value="Add Inventory Item">
-						</form>
-					</div>
-
-					<div id="inv-items" class="col-sm-6">
-						<table class="table table-striped custab">
-					        <thead>
-					            <th><a href="" ng-click="">Item</a></th>
-					            <th>Quantity</th>
-					            <th>Unit of Measure</th>
-					            <th>Include Item?</th>
-					        </thead>
-					        <tr ng-repeat="inventoryItem in inventory track by $index">
-					            <td><a href="" ng-click="removeItem()">{{inventoryItem.item}}</a></td>
-					            <td>{{inventoryItem.qty}}</td>
-					            <td>{{inventoryItem.uom}}</td>
-					            <td><label>
-									    <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{inventoryItem.include}}" aria-label="..." ng-value="inventoryItem.include" ng-model="include" ng-change="includeSelected(include, $index)">
-									</label>
-								</td>
-					        </tr>
-					    </table>
-					</div>
-				</div>
-				<div id="favorites" class="col-sm-5 panel panel-bg">
-					<div id="add-fav" class="col-sm-6">
-						<form ng-submit="addFavorite()" name="fav-form">
-							<select class="form-control" ng-model="selectCuisine" ng-value="">
-  								<option>American</option>
-  								<option>Italian</option>
-  								<option>Asian</option>
-  								<option>Mexican</option>
-  								<option>Southern & Soul Food</option>
-  								<option>French</option>
-  								<option>Southwestern</option>
-  								<option>Barbecue</option>
-  								<option>Indian</option>
-  								<option>Chinese</option>
-  								<option>Cajun & Creole</option>
-  								<option>English</option>
-  								<option>Mediterranean</option>
-  								<option>Greek</option>
-  								<option>Spanish</option>
-  								<option>German</option>
-  								<option>Thai</option>
-  								<option>Moroccan</option>
-  								<option>Irish</option>
-  								<option>Japanese</option>
-  								<option>Cuban</option>
-  								<option>Hawaiin</option>
-  								<option>Swedish</option>
-  								<option>Hungarian</option>
-  								<option>Portugese</option>
-  							</select>
-  							<input class="btn btn-default" type="submit" value="Add Favorite">
-						</form> 
-					</div>
-					<div id="fav-items" class="col-sm-6">
-						<table class="table table-striped custab">
-					        <thead>
-					            <th><a href="" ng-click="">Cuisine</a></th>
-					            <th>Include Item?</th>
-					        </thead>
-					        <tr ng-repeat="favoriteFood in favFood track by $index">
-					            <td><a href="" ng-click="removeCuisine()">{{favoriteFood.cuisine}}</a></td>
-					            <td><label>
-									    <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="ifavoriteFood.cuisine" ng-model="include" ng-change="includeCuisine(include, $index)">
-									</label>
-								</td>
-					        </tr>
-					    </table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="container">
+    <div class="row inv-profile-header">
+        <div id="profile" class="col-md-11 panel panel-bg">
+            <div class="col-lg-3 text-center" id="user-profile">
+                <img id="user" src="../../assets/img/placeholderprofileimage.png">
+                <p ng-model="userProfile">{{email}}</p>
+            </div>
+            <div class="col-md-7">
+                <div id="favs" class="col-sm-4">
+                    <p class="text-center"><a href="#">Must try</a></p>
+                    <p class="text-center"><a href="#">To Share</a></p>
+                    <p class="text-center"><a href="#">Queue</a></p>
+                </div>
+                <!-- <div id="links" class="col-lg-5">
+                    <div class="col-sm-12">
+                        <p class="text-center"><a href="#">Family</a></p>
+                        <p class="text-center">Mom</p>
+                        <p class="text-center">Dad</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p class="text-center"><a href="#">Friends</a></p>
+                        <p class="text-center">Steve</p>
+                        <p class="text-center">Ashley</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p class="text-center"><a href="#">Followers</a></p>
+                    </div>
+                </div> -->
+                <div class="col-lg-8" ng-cloak>
+                    <div class="col-md-4">
+                        <h3>Weather Conditions</h3>
+                        <div>&deg;{{weather.currTemp}} {{weather.weatherMain}}
+                        </div>
+                        <div>
+                            <img ng-src="{{weather.weatherIconURL}}">
+                        </div>
+                        <div class="col-md-4">
+                            <img ng-src="assets/img/sun.ico" style="width: 80%;"> {{ weather.sunriseLocalTime() }}
+                        </div>
+                        <div class="col-md-4">
+                            <img ng-src="assets/img/moon.ico" style="width: 80%;"> {{ weather.sunsetLocalTime() }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tables" class="row">
+            <div id="inv-favs" class="col-sm-12">
+                <div id="inventory" class="col-sm-6 panel panel-bg">
+                    <div id="add-inv" class="col-sm-6">
+                        <form ng-submit="addInventoryItem()" name="form">
+                            <input type="text" class="form-control" ng-model="item" placeholder="Item">
+                            <input type="text" class="form-control" ng-model="qty" placeholder="Quantity">
+                            <input type="text" class="form-control" ng-model="uom" placeholder="Unit of Measure">
+                            <input class="btn btn-default" type="submit" value="Add Inventory Item">
+                        </form>
+                    </div>
+                    <div id="inv-items" class="col-sm-6">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <th><a href="" ng-click="">Item</a></th>
+                                <th>Quantity</th>
+                                <th>Unit of Measure</th>
+                                <th>Include Item?</th>
+                            </thead>
+                            <tr ng-repeat="inventoryItem in inventory track by $index">
+                                <td><a href="" ng-click="removeItem()">{{inventoryItem.item}}</a></td>
+                                <td>{{inventoryItem.qty}}</td>
+                                <td>{{inventoryItem.uom}}</td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{inventoryItem.include}}" aria-label="..." ng-value="inventoryItem.include" ng-model="include" ng-change="includeSelected(include, $index)">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="favorites" class="col-sm-5 panel panel-bg">
+                    <div id="add-fav" class="col-sm-6">
+                        <form ng-submit="addFavorite()" name="fav-form">
+                            <select class="form-control" ng-model="selectCuisine" ng-value="">
+                                <option>American</option>
+                                <option>Italian</option>
+                                <option>Asian</option>
+                                <option>Mexican</option>
+                                <option>Southern & Soul Food</option>
+                                <option>French</option>
+                                <option>Southwestern</option>
+                                <option>Barbecue</option>
+                                <option>Indian</option>
+                                <option>Chinese</option>
+                                <option>Cajun & Creole</option>
+                                <option>English</option>
+                                <option>Mediterranean</option>
+                                <option>Greek</option>
+                                <option>Spanish</option>
+                                <option>German</option>
+                                <option>Thai</option>
+                                <option>Moroccan</option>
+                                <option>Irish</option>
+                                <option>Japanese</option>
+                                <option>Cuban</option>
+                                <option>Hawaiin</option>
+                                <option>Swedish</option>
+                                <option>Hungarian</option>
+                                <option>Portugese</option>
+                            </select>
+                            <input class="btn btn-default" type="submit" value="Add Favorite">
+                        </form>
+                    </div>
+                    <div id="fav-items" class="col-sm-6">
+                        <table class="table table-striped custab">
+                            <thead>
+                                <th><a href="" ng-click="">Cuisine</a></th>
+                                <th>Include Item?</th>
+                            </thead>
+                            <tr ng-repeat="favoriteFood in favFood track by $index">
+                                <td><a href="" ng-click="removeCuisine()">{{favoriteFood.cuisine}}</a></td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="ifavoriteFood.cuisine" ng-model="include" ng-change="includeCuisine(include, $index)">
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
