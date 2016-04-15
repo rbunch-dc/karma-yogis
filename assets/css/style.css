@@ -1,21 +1,21 @@
 /*
-Error: Invalid CSS after "": expected selector, was "<<<<<<< Updated..."
-        on line 343 of /Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss
+Error: Invalid CSS after "": expected selector, was "======="
+        on line 479 of /Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss
 
-338: 
-339: .login-help {
-340:     font-size: 12px;
-341: }
-342: 
-343: <<<<<<< Updated upstream
-344: 
-345: 
-346: 
-347: 
-348: 
+474:   } 40% {
+475:     -webkit-transform: scale(1);
+476:             transform: scale(1);
+477:   }
+478: }
+479: =======
+480: #profile{
+481:     border: 2px solid black;
+482:    background-image: url("../img/recipecard2.jpg");
+483: }
+484: 
 
 Backtrace:
-/Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss:343
+/Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss:479
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1095:in `expr!'
@@ -58,4 +58,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"\": expected selector, was \"<<<<<<< Updated...\"\A         on line 343 of /Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss\A \A 338: \A 339: .login-help {\A 340:     font-size: 12px;\A 341: }\A 342: \A 343: <<<<<<< Updated upstream\A 344: \A 345: \A 346: \A 347: \A 348: "; }
+  content: "Error: Invalid CSS after \"\": expected selector, was \"=======\"\A         on line 479 of /Users/jeremyhilliard14/Desktop/DigitalCrafts/Unit2/karma-yogis/tools/compass/sass/style.scss\A \A 474:   } 40% {\A 475:     -webkit-transform: scale(1);\A 476:             transform: scale(1);\A 477:   }\A 478: }\A 479: =======\A 480: #profile{\A 481:     border: 2px solid black;\A 482:    background-image: url(\"../img/recipecard2.jpg\");\A 483: }\A 484: "; }
