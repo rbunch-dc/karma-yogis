@@ -4,6 +4,7 @@
 
 <head>
     <title>Karma Yogi's Recipe App</title>
+    <script type="text/javascript" src="node_modules/please-wait/build/please-wait.min.js"></script>
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
@@ -19,6 +20,7 @@
     <script type="text/javascript" src="app/components/recipe/recipeController.js"></script>
     <script type="text/javascript" src="app/components/registration/registrationController.js"></script>
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/please-wait/build/please-wait.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,900|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
@@ -91,10 +93,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                        <li><a href="" ng-click="routeToNextPage('recipe')"><span class="glyphicon glyphicon-cutlery"></span> Recipes</a></li>
+                        <li id="active-home" class="active"><a href="" ng-click="routeToNextPage('home')"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                        <li id="active-recipe"><a href="" ng-click="routeToNextPage('recipe')"><span class="glyphicon glyphicon-cutlery"></span> Recipes</a></li>
                         <!-- <li><a href="#"><span class="   glyphicon glyphicon-list-alt"></span> Profile</a></li>   -->
-                        <li><a href="" ng-click="routeToNextPage('inventory')"><span class="glyphicon glyphicon-list-alt"></span> User Profile</a></li>
+                        <li id="active-inventory"><a href="" ng-click="routeToNextPage('inventory')"><span class="glyphicon glyphicon-list-alt"></span> User Profile</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" ng-init="loggedIn=false" ng-cloak>
                         <!--   <li><a href="javascript(void);" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-exclamation-sign"></span> Help</a></li> -->
