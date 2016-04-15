@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="food-content col-md-8">
-                <div ng-repeat="recipe in recipes" class="col-md-5 col-md-offset-1 food-content text-left panel panel-default card ng-cloak">
-                    <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
+                <div ng-repeat="recipe in recipes" class="col-md-5 col-md-offset-1 food-content text-left panel panel-default ng-cloak">
+                    <h6 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h6>
                     <div class="food-image text-center">
                         <a href="{{ createRecipeUrl(recipe.recipeId) }}">
                             <img ng-src="{{ recipe.largeImageURL }}">
@@ -52,5 +52,5 @@
         }
     });
     $('.food-content').height(tallestHeight);
-    
+
 </script>

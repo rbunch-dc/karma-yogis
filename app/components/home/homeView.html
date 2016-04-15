@@ -5,23 +5,21 @@
     <div class="row">
 
         <div  class="col-md-12">
-            <div class="food-content col-md-4" ng-repeat="recipe in recipes">
-                <div class="col-md-10 col-md-offset-2 food-content text-left panel panel-default card ng-cloak">
-                <h5 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h5>
-                <div class="food-image text-center">
-                    <a href="{{ createRecipeUrl(recipe.recipeId) }}">
-                        <img ng-src="{{ recipe.largeImageURL }}">
-                    </a>
-                </div>
-
-                <h2 style="color: #8a1617;">{{recipe.recipeName}}</h2>
-                <div> Ready In: {{recipe.prepTime }}</div>
-                <div>Rating: <img ng-src="{{recipe.ratingStarsImg}}">
-                </div>
-                <h4 style="color: #8a1617;">Ingredients</h4>
-                <div class="ing-list" ng-repeat="ingredient in recipe.ingredients">
-                            <li>{{ingredient}}</li>
-                </div>
+            <div class="food-content col-md-4" ng-repeat="recipe in recipes" >
+                <div class="col-md-10 col-md-offset-2 food-content text-left panel panel-default card ng-cloak" >
+                <h6 class="text-left">Source: <span style="color: #8a1617;">{{recipe.sourceDisplayName}}</span></h6>
+                    <div class="food-image text-center">
+                        <a href="{{ createRecipeUrl(recipe.recipeId) }}">
+                            <img ng-src="{{ recipe.largeImageURL }}">
+                        </a>
+                    </div>
+                    <h2 style="color: #8a1617;">{{recipe.recipeName}}</h2>
+                    <div> Ready In: {{recipe.prepTime }}</div>
+                    <div>Rating: <img ng-src="{{recipe.ratingStarsImg}}"></div>
+                    <h4 style="color: #8a1617;">Ingredients</h4>
+                    <div class="ing-list" ng-repeat="ingredient in recipe.ingredients">
+                        <li>{{ingredient}}</li>
+                    </div>
                 
             </div>
 
