@@ -627,10 +627,11 @@ body.pg-loaded > .inner {
 
 /* line 533, ../../tools/compass/sass/style.scss */
 #favs {
-  margin-top: 55px;
+  margin-top: 10px;
+  margin-left: -75px;
 }
 
-/* line 537, ../../tools/compass/sass/style.scss */
+/* line 538, ../../tools/compass/sass/style.scss */
 #favs p {
   border-radius: 5px;
   background-color: #8a1617;
@@ -641,12 +642,12 @@ body.pg-loaded > .inner {
   margin-left: 80px;
   color: white;
 }
-/* line 546, ../../tools/compass/sass/style.scss */
+/* line 547, ../../tools/compass/sass/style.scss */
 #favs p a {
   color: white;
 }
 
-/* line 551, ../../tools/compass/sass/style.scss */
+/* line 552, ../../tools/compass/sass/style.scss */
 #links {
   margin-top: 40px;
   margin-left: 100px;
@@ -658,12 +659,12 @@ body.pg-loaded > .inner {
   width: 200px;
 }
 
-/* line 562, ../../tools/compass/sass/style.scss */
+/* line 563, ../../tools/compass/sass/style.scss */
 #links p {
   margin-top: 10px;
 }
 
-/* line 566, ../../tools/compass/sass/style.scss */
+/* line 567, ../../tools/compass/sass/style.scss */
 #inventory {
   background-image: none;
   background-color: #dc514f;
@@ -673,17 +674,17 @@ body.pg-loaded > .inner {
   border: 2px solid #db2427;
 }
 
-/* line 575, ../../tools/compass/sass/style.scss */
+/* line 576, ../../tools/compass/sass/style.scss */
 #add-inv {
   margin-top: 55px;
 }
 
-/* line 579, ../../tools/compass/sass/style.scss */
+/* line 580, ../../tools/compass/sass/style.scss */
 #inv-items {
   margin-top: 40px;
 }
 
-/* line 583, ../../tools/compass/sass/style.scss */
+/* line 584, ../../tools/compass/sass/style.scss */
 #favorites {
   background-image: none;
   background-color: #dc514f;
@@ -694,17 +695,17 @@ body.pg-loaded > .inner {
   min-height: 215px;
 }
 
-/* line 593, ../../tools/compass/sass/style.scss */
+/* line 594, ../../tools/compass/sass/style.scss */
 #add-fav {
   margin-top: 52px;
 }
 
-/* line 597, ../../tools/compass/sass/style.scss */
+/* line 598, ../../tools/compass/sass/style.scss */
 #fav-items {
   margin-top: 40px;
 }
 
-/* line 601, ../../tools/compass/sass/style.scss */
+/* line 602, ../../tools/compass/sass/style.scss */
 .custab {
   border: 1px solid black;
   padding: 5px;
@@ -713,8 +714,20 @@ body.pg-loaded > .inner {
   transition: 0.5s;
 }
 
-/* line 608, ../../tools/compass/sass/style.scss */
+/* line 609, ../../tools/compass/sass/style.scss */
 .custab:hover {
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+
+/* line 614, ../../tools/compass/sass/style.scss */
+#profile-info {
+  margin-top: 25px;
+  margin-left: 120px;
+}
+
+/* line 620, ../../tools/compass/sass/style.scss */
+#weather {
+  margin-top: 5px;
+  margin-left: 55px;
 }

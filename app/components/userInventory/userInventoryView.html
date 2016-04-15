@@ -1,11 +1,21 @@
 <div id="container">
     <div class="row inv-profile-header">
         <div id="profile" class="col-md-11 panel panel-bg">
-            <div class="col-lg-3 text-center" id="user-profile">
+            <div class="col-lg-2 text-center" id="user-profile">
                 <img id="user" class="thumbnail" src="../../assets/img/placeholderprofileimage.png">
                 <p ng-model="userProfile">{{email}}</p>
             </div>
-            <div class="col-md-7">
+            <div class="col-sm-3">
+            <div id="profile-info">
+                <ul class="list-unstyled">
+                    <li>First: {{nameFirst}}</li>
+                    <li>Last: {{nameLast}}</li>
+                    <li>City: {{city}}</li>
+                    <li>Zip: {{zip}}</li>
+                </ul>
+            </div>
+            </div>
+            <div class="col-md-6">
                 <div id="favs" class="col-sm-4">
                     <p class="text-center">Must try</p>
                     <p class="text-center">To Share</p>
@@ -27,9 +37,9 @@
                     </div>
                 </div> -->
                 <div class="col-lg-8" ng-cloak>
-                    <div class="col-md-4">
+                    <div id="weather" class="col-md-4 text-center">
                         <h3>Weather Conditions</h3>
-                        <div>&deg;{{weather.currTemp}} {{weather.weatherMain}}
+                        <div>{{weather.currTemp}}&deg; {{weather.weatherMain}}
                         </div>
                         <div>
                             <img ng-src="{{weather.weatherIconURL}}">
@@ -129,3 +139,4 @@
             </div>
         </div>
     </div>
+</div>

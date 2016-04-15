@@ -531,7 +531,8 @@ body.pg-loaded > .inner {
     text-align: center;
 }
 #favs{
-    margin-top: 55px;
+    margin-top: 10px;
+    margin-left: -75px;
 }
 
 #favs p{
@@ -609,3 +610,14 @@ body.pg-loaded > .inner {
     box-shadow: 3px 3px 0px transparent;
     transition: 0.5s;
   }
+
+#profile-info{
+  margin-top: 25px;
+  margin-left: 120px;
+
+}
+
+#weather{
+  margin-top: 5px;
+  margin-left: 55px;
+}
