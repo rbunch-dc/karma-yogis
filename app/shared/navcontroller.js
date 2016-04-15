@@ -78,7 +78,7 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
         // var bad = isNullOrEmpty(userProfile.email);
         // console.log(userProfile);
         // console.log(bad);
-        if ( isNullOrEmpty(userProfile.email) ) {
+        if (isNullOrEmpty(userProfile.email)) {
             $('#login-modal').modal('show');
             // alert('not logged in');
             return;
@@ -89,6 +89,23 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
             $route.reload();
         }
         $location.path(next);
+        switch (nextPage) {
+            case 'home':
+                $('#active-home').addClass('active');
+                $('#active-recipe').removeClass('active');
+                $('#active-inventory').removeClass('active');
+                break;
+            case 'recipe':
+                $('#active-home').removeClass('active');
+                $('#active-recipe').addClass('active');
+                $('#active-inventory').removeClass('active');
+                break;
+            case 'inventory':
+                $('#active-home').removeClass('active');
+                $('#active-recipe').removeClass('active');
+                $('#active-inventory').addClass('active');
+                break;
+        }
 
     };
 

@@ -10,6 +10,7 @@
     "bootstrap": "^3.3.6",
     "connect": "^3.4.1",
     "jquery": "^2.2.3",
+    "please-wait": "0.0.5",
     "serve-static": "^1.10.2"
   },
   "devDependencies": {},
