@@ -36,6 +36,8 @@ The application uses the identified/tagged inventory items plus the user's favor
 * Recipe API from Yummly
 
 ####Screen Shots
+![Alt text](screenshots/Complete.jpg?raw=true)
+![Alt text](screenshots/Inital-MVP-Startup-Doc.png?raw=true)
 ![Alt text](screenshots/ScreenShot1.png?raw=true)
 ![Alt text](screenshots/ScreenShot2.png?raw=true)
 ![Alt text](screenshots/ScreenShot3.png?raw=true)
