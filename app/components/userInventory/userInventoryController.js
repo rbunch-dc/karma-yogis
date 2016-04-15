@@ -89,10 +89,10 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
             msg: "Are you sure you want to delete this item?",
             callback: function($this, type, ev){
                 if (type === 'yes') {
-                sharedData.userProfile.inventory.splice(index, 1);
-                $scope.inventory = sharedData.userProfile.inventory;
-                userStore.setUser(sharedData.userProfile);
-                $scope.$apply();
+                    sharedData.userProfile.inventory.splice(index, 1);
+                    $scope.inventory = sharedData.userProfile.inventory;
+                    userStore.setUser(sharedData.userProfile);
+                    $scope.$apply();
                 }
                 console.log(ev);
                 console.log(type);
@@ -110,12 +110,12 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
             msg: "Are you sure you want to delete this cuisine?",
             callback: function($this, type, ev){
                 if (type === 'yes') {
-                sharedData.userProfile.favFood.splice(index, 1);
-                $scope.inventory = sharedData.userProfile.favFood;
-                userStore.setUser(sharedData.userProfile);
-                $scope.$apply();
+                    sharedData.userProfile.favFood.splice(index, 1);
+                    $scope.inventory = sharedData.userProfile.favFood;
+                    userStore.setUser(sharedData.userProfile);
+                    $scope.$apply();
                 }
-            };
+            }
         });
     };
 
