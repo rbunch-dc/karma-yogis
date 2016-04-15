@@ -10,8 +10,12 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     console.log(sharedData.userProfile);
 
     $scope.addInventoryItem = function() {
+        if (!$scope.item) {
+            return;
+        }
+
         var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom, false);
-        
+
         if (!$scope.inventory) {
             $scope.inventory = [];
         }
@@ -37,7 +41,9 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
 
 
     $scope.addFavorite = function() {
-
+        if (!$scope.selectCuisine) {
+            return;
+        }
         var favoriteFood = new foodItem($scope.selectCuisine);
         if (!$scope.favFood) {
             $scope.favFood = [];
@@ -95,9 +101,9 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     };
 
     $scope.removeItem = function(index) {
-       var result = Lobibox.confirm({
+        var result = Lobibox.confirm({
             msg: "Are you sure you want to delete this item?",
-            callback: function($this, type, ev){
+            callback: function($this, type, ev) {
                 if (type === 'yes') {
                     sharedData.userProfile.inventory.splice(index, 1);
                     // $scope.inventory = sharedData.userProfile.inventory;
@@ -118,7 +124,7 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     $scope.removeCuisine = function(index) {
         var result = Lobibox.confirm({
             msg: "Are you sure you want to delete this cuisine?",
-            callback: function($this, type, ev){
+            callback: function($this, type, ev) {
                 if (type === 'yes') {
                     sharedData.userProfile.favFood.splice(index, 1);
                     // $scope.favFood = sharedData.userProfile.favFood;
@@ -130,12 +136,12 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     };
 
     function weatherSuccessFunc(data) {
-    	console.log(data);
-    	$scope.weather = data;
+        console.log(data);
+        $scope.weather = data;
     }
 
     function weatherErrorFunc(data) {
-    		console.log(data);
+        console.log(data);
     }
     var city = sharedData.userProfile.city;
     var zip = sharedData.userProfile.zip;

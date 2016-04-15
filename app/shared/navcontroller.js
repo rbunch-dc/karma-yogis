@@ -6,8 +6,8 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
     $scope.pass = "";
     $scope.sharedData = sharedData;
 
-    utilLocalStore.setUserName('curtis');
-    utilLocalStore.setUserPswd('123');
+    // utilLocalStore.setUserName('curtis');
+    // utilLocalStore.setUserPswd('123');
 
 
     $scope.logoutSubmit = function() {
