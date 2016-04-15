@@ -195,7 +195,7 @@ legend {
     .panel {
     margin-bottom: 20px;
     margin-left: 0px;
-    // top: 210px;
+    top: 210px;
     }
     .search-bar {
         top: 140px;
@@ -225,6 +225,8 @@ legend {
         border-top: 0px;
     }
 }
+
+// ******* Media Tag for Small Screen *******
 
 @media screen and (max-width: 550px) {
   .bottom-search {
@@ -261,7 +263,7 @@ legend {
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-/****** LOGIN MODAL ******/
+// /****** LOGIN MODAL ******/ ******* REGISTER MODAL *******
 
 .modal-dialog{
   margin-top: 25vh;
@@ -389,7 +391,7 @@ user-select: none; */
 
 
 
-
+// ******* Loading screen CSS! *******
 
 body > .inner {
   display: none;
@@ -519,6 +521,8 @@ body.pg-loaded > .inner {
             transform: scale(1);
   }
 }
+
+// ******* inventory CSS! *******
 
 #profile{
     border: 2px solid #db2427;
