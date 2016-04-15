@@ -20,8 +20,8 @@ var homeController = function($scope, $http, recipesApi, sharedData) {
 
     $scope.search = function(term) {
         loading_screen = window.pleaseWait({
-            logo: "assets/img/logo.png",
-            backgroundColor: '#8a1617',
+            logo: "assets/img/logo2.png",
+            backgroundColor: '#8a1617', 
             // backgroundColor: '#ffffff',
             loadingHtml: '<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>'
         });
