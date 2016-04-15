@@ -32,10 +32,11 @@
         <div class="register">
             <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
-                    <div class="loginmodal-container">
+                    <div class="signup-container">
+                        <a class="close" data-dismiss="modal">&times;</a>
                         <form>
                         <legend><a href="#"><i class=""></i></a><img class="logo-banner" src="assets/img/logo.png" alt=""><span class="sign-up-text">{{signUpMessage}}</span>
-                                <a class="close" data-dismiss="modal">&times;</a>
+                                
                             </legend>
                             <div class="row">
                                 <div class="col-xs-6 col-md-6">
@@ -60,10 +61,6 @@
                                 Sign up</button>
                             
                         </form>
-                        <div class="login-help">
-                            <br>
-                            <a href="" ng-click="signupFromLogin()">Register</a>
-                        </div>
                     </div>
                 </div>
             </div>
