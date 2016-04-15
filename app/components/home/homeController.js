@@ -28,8 +28,8 @@ var homeController = function($scope, $http, recipesApi, sharedData) {
         });
         var randomCuisines = sharedData.getRandomCuisines(5);
         var randomFoods = sharedData.getRandomFoods(5).join(" ");
-        //recipesApi.getRecipes(_max, randomFoods, _apiKey, _apiId, onSearchComplete, onError, randomCuisines);
-        recipesApi.getRecipes(_max, term, _apiKey, _apiId, onSearchComplete, onError);
+        recipesApi.getRecipes(_max, term, _apiKey, _apiId, onSearchComplete, onError, randomCuisines);
+        // recipesApi.getRecipes(_max, term, _apiKey, _apiId, onSearchComplete, onError);
     };
 
     //TODO: Set up Pagination
