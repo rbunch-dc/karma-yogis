@@ -1,29 +1,31 @@
 
 	<div id="container">
-		<div class="row header">
-			<div id="profile" class="col-lg-11 panel panel-default">
+		<div class="row inv-profile-header">
+			<div id="profile" class="col-lg-11 panel panel-bg">
 				<div class="col-lg-3 text-center" id="user-profile">
 					<img id="user" src="../../assets/img/placeholderprofileimage.png">
 					<p ng-model="userProfile">{{email}}</p>
 				</div>
-				<div class="col-lg-5" id="favs">
+				<div class="col-lg-9">
+					<div id="favs" class="col-sm-4">
 					<p class="text-center"><a href="#">Must try</a></p>
 					<p class="text-center"><a href="#">To Share</a></p>
 					<p class="text-center"><a href="#">Queue</a></p>
-				</div>
-				<div id="links" class="col-lg-3">
-					<div class="col-sm-12">
-						<p class="text-center"><a href="#">Family</a></p>
-						<p class="text-center">Mom</p>
-						<p class="text-center">Dad</p>
 					</div>
-					<div class="col-sm-12">
-						<p class="text-center"><a href="#">Friends</a></p>
-						<p class="text-center">Steve</p>
-						<p class="text-center">Ashley</p>
-					</div>
-					<div class="col-sm-12">
-						<p class="text-center"><a href="#">Followers</a></p>
+					<div id="links" class="col-lg-5">
+						<div class="col-sm-12">
+							<p class="text-center"><a href="#">Family</a></p>
+							<p class="text-center">Mom</p>
+							<p class="text-center">Dad</p>
+						</div>
+						<div class="col-sm-12">
+							<p class="text-center"><a href="#">Friends</a></p>
+							<p class="text-center">Steve</p>
+							<p class="text-center">Ashley</p>
+						</div>
+						<div class="col-sm-12">
+							<p class="text-center"><a href="#">Followers</a></p>
+						</div>
 					</div>
 
 				</div>
@@ -31,7 +33,7 @@
 		</div>
 		<div id="tables" class="row">
 			<div id="inv-favs" class="col-sm-12">
-				<div id="inventory" class="col-sm-6 panel panel-default">
+				<div id="inventory" class="col-sm-6 panel panel-bg">
 					<div id="add-inv" class="col-sm-6">
 						<form ng-submit="addInventoryItem()" name="form">
 							<input type="text" class="form-control" ng-model="item" placeholder="Item">
@@ -42,7 +44,7 @@
 					</div>
 
 					<div id="inv-items" class="col-sm-6">
-						<table class="table table-hover">
+						<table class="table table-striped custab">
 					        <thead>
 					            <th><a href="" ng-click="">Item</a></th>
 					            <th>Quantity</th>
@@ -61,7 +63,7 @@
 					    </table>
 					</div>
 				</div>
-				<div id="favorites" class="col-sm-5 panel panel-default p">
+				<div id="favorites" class="col-sm-5 panel panel-bg">
 					<div id="add-fav" class="col-sm-6">
 						<form ng-submit="addFavorite()" name="fav-form">
 							<select class="form-control" ng-model="selectCuisine" ng-value="">
@@ -95,7 +97,7 @@
 						</form> 
 					</div>
 					<div id="fav-items" class="col-sm-6">
-						<table class="table table-hover">
+						<table class="table table-striped custab">
 					        <thead>
 					            <th><a href="" ng-click="">Cuisine</a></th>
 					            <th>Include Item?</th>

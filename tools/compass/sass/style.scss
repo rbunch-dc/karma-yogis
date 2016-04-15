@@ -340,6 +340,7 @@ user-select: none; */
     font-size: 12px;
 }
 
+<<<<<<< Updated upstream
 
 
 
@@ -476,3 +477,92 @@ body.pg-loaded > .inner {
             transform: scale(1);
   }
 }
+=======
+#profile{
+    border: 2px solid black;
+   background-image: url("../img/recipecard2.jpg");
+}
+
+#user-profile{
+    margin-top: 15px;
+    text-align: center;
+}
+#favs{
+    margin-top: 55px;
+}
+
+#favs p{
+    background-color: black;
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 80px;
+    color: white;
+    a{
+        color: white;
+    }
+}
+
+#links{
+    margin-top: 40px;
+    margin-left: 100px;
+    text-align: center;
+    // background-color: #f4f095;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+}
+
+#links p{
+    margin-top: 10px;
+}
+
+#inventory{
+    // background-image: none;
+    background-color: gainsboro;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 25px;
+    border: 2px solid black;
+}
+
+#add-inv{
+    margin-top: 55px;
+}
+
+#inv-items{
+    margin-top: 40px;
+}
+
+#favorites{
+    // background-image: none;
+    background-color: gainsboro;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 28px;
+    border: 2px solid black;
+    min-height: 215px;
+}
+
+#add-fav{
+    margin-top: 52px;
+}
+
+#fav-items{
+    margin-top: 40px;
+}
+
+.custab{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px black;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+>>>>>>> Stashed changes
