@@ -4,7 +4,7 @@
 Team: Curtis, Josh, Jeremy, and Kochan
 
 ### Synopsis
-Team Karma-Yogis has created a recipe app that will provide recipe recommendations based on the inventory items you choose to include in your search.  The app is built using the Yummly API, Angular js, JavaScript, JQuery, Bootstrap, and the Addthis social media plug-in.  LocalStorage and Angular factories are also used extensively to simulate back-end services and share information between the controllers.  This allows us to use log-ins and store the user inventory/favorite foods.
+Team Karma-Yogis has created a recipe app that will provide recipe recommendations based on the inventory items you choose to include in your search.  The app is built using the Yummly API, Angular js, JavaScript, JQuery, Bootstrap, and the Addthis social media plug-in.  LocalStorage and Angular factories are also used extensively to simulate back-end services and share information between the controllers.  This allows us to use log-ins and store the user inventory/favorite foods. App display an entertaining wait page while the app loads
 
 ### Components
 The app is broken into several components: the navbar, which contains all the navigation and log-in features; the home view, which presents the highest rated recipes starting with the highest rated; the recipe view, which returns recipes based on user search parameters; the user profile/inventory page, which contains the stored user inventory and favorite types of food.
