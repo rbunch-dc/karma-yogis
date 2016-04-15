@@ -19,4 +19,7 @@ The home view shows the highest rated recipes that are pulled from the Yummly AP
 The recipe view shows recipes related to either a user search in the search bar or based on inventory items and favorite foods that have been selected on the inventory page.  Recipes based on inventory items are displayed on the right side of the recipe page.
 
 #### Inventory View
-The inventory view shows a user profile at the top and the user's inventory at the bottom.  The user has the ability to add items to inventory and favorite foods to the tables.  The items are pushed and stored into local storage and are used to initiate search recommendations.
+The inventory view shows a user profile at the top and the user's inventory at the bottom.  The user has the ability to add items to inventory and favorite cuisines to the tables.  The items are pushed and stored into local storage and are used to initiate search recommendations.
+
+#### Recommendation Engine
+The application uses the identified/tagged inventory items plus the user's favorite cuisines to come up with a list of recommended recipes.
