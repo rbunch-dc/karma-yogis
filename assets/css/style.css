@@ -3,7 +3,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  background-color: gray;
+  background-color: lightgray;
 }
 
 /* line 9, ../../tools/compass/sass/style.scss */
@@ -66,6 +66,7 @@ img.mouth {
 
 /* line 60, ../../tools/compass/sass/style.scss */
 .panel {
+  margin-bottom: 20px;
   position: relative;
   top: 250px;
   padding: 10px 10px;
