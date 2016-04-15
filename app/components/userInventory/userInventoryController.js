@@ -11,20 +11,24 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
 
     $scope.addInventoryItem = function() {
         var invItem = new inventoryItem($scope.item, $scope.qty, $scope.uom, false);
+        
         if (!$scope.inventory) {
             $scope.inventory = [];
         }
 
-        $scope.inventory.push(invItem);
-        $scope.newInventoryItem = '';
-
         if (!sharedData.userProfile.inventory) {
             sharedData.userProfile.inventory = [];
         }
+        sharedData.userProfile.inventory.push(invItem);
+        userStore.setUser(sharedData.userProfile);
+        $scope.$apply();
+        // $scope.inventory.push(invItem);
+        // $scope.newInventoryItem = '';
+
         //userProfile.inventory.push(invItem);
 
-        sharedData.userProfile = userProfile;
-        userStore.setUser(userProfile);
+        // sharedData.userProfile = userProfile;
+        // userStore.setUser(userProfile);
 
         console.log(sharedData);
         console.log(sharedData.userProfile);
@@ -39,17 +43,23 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
             $scope.favFood = [];
         }
 
-        $scope.favFood.push(favoriteFood);
-        $scope.newFavoriteFood = '';
-
         if (!sharedData.userProfile.favFood) {
             sharedData.userProfile.favFood = [];
         }
+        sharedData.userProfile.favFood.push(favoriteFood);
+        userStore.setUser(sharedData.userProfile);
+        $scope.$apply();
+        // $scope.favFood.push(favoriteFood);
+        // $scope.newFavoriteFood = '';
 
-        //userProfile.favFood.push(favoriteFood);
+        // if (!sharedData.userProfile.favFood) {
+        //     sharedData.userProfile.favFood = [];
+        // }
 
-        sharedData.userProfile = userProfile;
-        userStore.setUser(userProfile);
+        // //userProfile.favFood.push(favoriteFood);
+
+        // sharedData.userProfile = userProfile;
+        // userStore.setUser(userProfile);
 
         console.log(sharedData);
         console.log(sharedData.userProfile);
@@ -90,7 +100,7 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
             callback: function($this, type, ev){
                 if (type === 'yes') {
                     sharedData.userProfile.inventory.splice(index, 1);
-                    $scope.inventory = sharedData.userProfile.inventory;
+                    // $scope.inventory = sharedData.userProfile.inventory;
                     userStore.setUser(sharedData.userProfile);
                     $scope.$apply();
                 }
@@ -111,7 +121,7 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
             callback: function($this, type, ev){
                 if (type === 'yes') {
                     sharedData.userProfile.favFood.splice(index, 1);
-                    $scope.inventory = sharedData.userProfile.favFood;
+                    // $scope.favFood = sharedData.userProfile.favFood;
                     userStore.setUser(sharedData.userProfile);
                     $scope.$apply();
                 }

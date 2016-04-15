@@ -64,7 +64,7 @@
                                 <th>Include Item?</th>
                             </thead>
                             <tr ng-repeat="inventoryItem in inventory track by $index">
-                                <td><a href="" ng-click="removeItem()">{{inventoryItem.item}}</a></td>
+                                <td><a href="" ng-click="removeItem($index)">{{inventoryItem.item}}</a></td>
                                 <td>{{inventoryItem.qty}}</td>
                                 <td>{{inventoryItem.uom}}</td>
                                 <td>
@@ -116,7 +116,7 @@
                                 <th>Include Item?</th>
                             </thead>
                             <tr ng-repeat="favoriteFood in favFood track by $index">
-                                <td><a href="" ng-click="removeCuisine()">{{favoriteFood.cuisine}}</a></td>
+                                <td><a href="" ng-click="removeCuisine($index)">{{favoriteFood.cuisine}}</a></td>
                                 <td>
                                     <label>
                                         <input type="checkbox" name="blankRadio" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="{{favoriteFood.include}}" ng-model="foodInclude" ng-checked="{{favoriteFood.include}}" ng-change="includeCuisine(foodInclude, $index)">
