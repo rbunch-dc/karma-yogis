@@ -6,6 +6,14 @@ body {
     // color: #8a1617;
 }
 
+img.mouth {
+  float: left;
+  width: 8%;
+  margin-right: 10px;
+}
+
+
+
 .close {
     position: relative;
     top: -10px;
@@ -174,7 +182,7 @@ legend {
     }
 
     .panel {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     margin-left: 0px;
     top: 210px;
     }
