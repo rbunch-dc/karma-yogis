@@ -85,14 +85,19 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     };
 
     $scope.removeItem = function(index) {
-        var result = confirm("Do you want to remove this item?");
-        if (result === true) {
-            sharedData.userProfile.inventory.splice(index, 1);
-            //$scope.inventory.splice(index, 1);
-            userStore.setUser(sharedData.userProfile);
-        } else if (result === false) {
-            return;
-        }
+       var result = Lobibox.confirm({
+            msg: "Are you sure you want to delete this item?",
+            callback: function($this, type, ev){
+                if (type === 'yes') {
+                    sharedData.userProfile.inventory.splice(index, 1);
+                    $scope.inventory = sharedData.userProfile.inventory;
+                    userStore.setUser(sharedData.userProfile);
+                    $scope.$apply();
+                }
+                console.log(ev);
+                console.log(type);
+            }
+        });
     };
 
     $scope.includeCuisine = function(include, index) {
@@ -101,14 +106,17 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
     };
 
     $scope.removeCuisine = function(index) {
-        var result = confirm("Do you want to remove this cuisine?");
-        if (result === true) {
-            sharedData.userProfile.favFood.splice(index, 1);
-            //$scope.inventory.splice(index, 1);
-            userStore.setUser(sharedData.userProfile);
-        } else if (result === false) {
-            return;
-        }
+        var result = Lobibox.confirm({
+            msg: "Are you sure you want to delete this cuisine?",
+            callback: function($this, type, ev){
+                if (type === 'yes') {
+                    sharedData.userProfile.favFood.splice(index, 1);
+                    $scope.inventory = sharedData.userProfile.favFood;
+                    userStore.setUser(sharedData.userProfile);
+                    $scope.$apply();
+                }
+            }
+        });
     };
 
     function weatherSuccessFunc(data) {
