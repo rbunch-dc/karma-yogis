@@ -69,7 +69,7 @@
                                 <td>{{inventoryItem.uom}}</td>
                                 <td>
                                     <label>
-                                        <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{inventoryItem.include}}" aria-label="..." ng-value="inventoryItem.include" ng-model="include" ng-change="includeSelected(include, $index)">
+                                        <input type="checkbox" name="blankRadio" id="{{inventoryItem.include}}" aria-label="..." ng-value="{{inventoryItem.include}}" ng-model="invInclude" ng-checked="{{inventoryItem.include}}"  ng-change="includeSelected(invInclude, $index)">
                                     </label>
                                 </td>
                             </tr>
@@ -119,7 +119,7 @@
                                 <td><a href="" ng-click="removeCuisine()">{{favoriteFood.cuisine}}</a></td>
                                 <td>
                                     <label>
-                                        <input type="checkbox" name="blankRadio" id="blankRadio1" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="ifavoriteFood.cuisine" ng-model="include" ng-change="includeCuisine(include, $index)">
+                                        <input type="checkbox" name="blankRadio" id="{{favoriteFood.cuisine}}" aria-label="..." ng-value="{{favoriteFood.include}}" ng-model="foodInclude" ng-checked="{{favoriteFood.include}}" ng-change="includeCuisine(foodInclude, $index)">
                                     </label>
                                 </td>
                             </tr>

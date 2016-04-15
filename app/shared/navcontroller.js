@@ -1,6 +1,7 @@
 recipeApp.controller('navController', function($scope, $location, $route, sharedData, utilLocalStore, userStore) {
 
     $scope.message = "Login to Your My Grub Account";
+    $scope.signUpMessage = "Sign Up";
     $scope.user = "";
     $scope.pass = "";
     $scope.sharedData = sharedData;
@@ -46,12 +47,15 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
 
     $scope.signUp = function() {
         if (isNullOrEmpty($scope.youremail) || isNullOrEmpty($scope.reenteremail) || isNullOrEmpty($scope.password)) {
-            alert('missing required fields');
+            $scope.signUpMessage = 'Missing Required Information';
+            // alert('Missing Required Information');
             return;
         }
-        var userData = userStore.getUser($scope.youremail);
+        var email = $scope.youremail.trim();
+        var userData = userStore.getUser(email);
         if (userData !== undefined && userData !== null) {
-            alert('already exists');
+            $scope.signUpMessage = "Account Already Exists";
+            // alert('already exists');
             return;
         }
 
