@@ -34,3 +34,17 @@ The application uses the identified/tagged inventory items plus the user's favor
 * Please-Wait (display animated message while waiting)
 * Weather API from Open Weather
 * Recipe API from Yummly
+
+####Screen Shots
+![Alt text](screenshots/ScreenShot1.png?raw=true)
+![Alt text](screenshots/ScreenShot2.png?raw=true)
+![Alt text](screenshots/ScreenShot3.png?raw=true)
+![Alt text](screenshots/ScreenShot4.png?raw=true)
+![Alt text](screenshots/ScreenShot5.png?raw=true)
+![Alt text](screenshots/ScreenShot6.png?raw=true)
+![Alt text](screenshots/ScreenShot7.png?raw=true)
+![Alt text](screenshots/ScreenShot8.png?raw=true)
+![Alt text](screenshots/ScreenShot9.png?raw=true)
+![Alt text](screenshots/ScreenShot10.png?raw=true)
+![Alt text](screenshots/ScreenShot11.png?raw=true)
+![Alt text](screenshots/ScreenShot12.png?raw=true)
