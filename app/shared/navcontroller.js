@@ -47,7 +47,7 @@ recipeApp.controller('navController', function($scope, $location, $route, shared
 
     $scope.signUp = function() {
         if (isNullOrEmpty($scope.youremail) || isNullOrEmpty($scope.reenteremail) || isNullOrEmpty($scope.password)) {
-            $scope.signUpMessage = 'Missing Required Information';
+            $scope.signUpMessage = 'Missing Info';
             // alert('Missing Required Information');
             return;
         }
