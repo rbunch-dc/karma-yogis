@@ -1,5 +1,5 @@
 
-
+<!-- ***** ng-repeat the food content into the home page! Populating images and info about food recipes. ***** -->
 
 <div id="content-wrapper" class="container-fluid" ng-init="search(' ')">
     <div class="row">
@@ -13,7 +13,7 @@
                             <img ng-src="{{ recipe.largeImageURL }}">
                         </a>
                     </div>
-                    <h2 style="color: #8a1617;">{{recipe.recipeName}}</h2>
+                    <h3 style="color: #8a1617;">{{recipe.recipeName}}</h3>
                     <div> Ready In: {{recipe.prepTime }}</div>
                     <div>Rating: <img ng-src="{{recipe.ratingStarsImg}}"></div>
                     <h4 style="color: #8a1617;">Ingredients</h4>
@@ -26,7 +26,10 @@
             </div>
         </div>
     </div>
-</div>      
+</div>   
+
+
+<!-- ***** Javascript function to change the height of panels based on the content filling the panels, the function will run and check what is the tallest height and change the current height. ***** -->   
 
 <script type="text/javascript">
     

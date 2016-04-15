@@ -33,6 +33,9 @@
 <!-- First div is for the loading spinner -->
     <div class="inner"> </div>
     <div ng-controller="navController" class="container-fluid main-wrapper">
+       
+<!-- Registeration modal for the website, links to the sign up button to open the modal. -->
+
         <div class="register">
             <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
@@ -69,6 +72,10 @@
                 </div>
             </div>
         </div>
+
+
+<!-- ***** Login modal, to login into the site! You can only use the recipe or profile page if! You are logged in. ***** -->
+
         <div class="login">
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
@@ -89,6 +96,9 @@
                 </div>
             </div>
         </div>
+
+<!-- ***** Fixed navigation bar for the entire website! ***** -->
+
         <nav class="navbar navbar-default">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -127,6 +137,12 @@
                     </ul>
                 </div>
             </div>
+
+
+
+<!-- ***** Search bar, that is fixed into the header of the site! Search calls to the api, to pull recipe information. ***** -->
+
+
             <div id="search-wrapper">
                 <!--    Place holder for moving div! Using this div to have a background color follow the search bar from the toggle collapse. -->
                 <div class="container"><img class="logo" src="assets/img/logo.png" alt=""></div>
