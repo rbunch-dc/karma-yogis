@@ -23,3 +23,14 @@ The inventory view shows a user profile at the top and the user's inventory at t
 
 #### Recommendation Engine
 The application uses the identified/tagged inventory items plus the user's favorite cuisines to come up with a list of recommended recipes.
+
+####Frameworks and APIs
+* Javascript
+* JQuery
+* Angular
+* Bootstrap
+* Lobibox (user confirmation modals)
+* Addthis (social media)
+* Please-Wait (display animated message while waiting)
+* Weather API from Open Weather
+* Recipe API from Yummly

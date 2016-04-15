@@ -2,6 +2,8 @@ recipeApp.controller('userInventoryController', function($scope, $location, user
 
     var userProfile = sharedData.userProfile; //userStore.getUser("jeremyhilliard14@gmail.com");
     var weatherData = {};
+    $scope.nameFirst = userProfile.nameFirst;
+    $scope.nameLast = userProfile.nameLast;
     $scope.city = userProfile.city;
     $scope.zip = userProfile.zip;
     // $scope.inventory = sharedData.userProfile.inventory;
